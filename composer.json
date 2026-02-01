@@ -1,9 +1,0 @@
-{
-    "name": "your-org/lightly-salted-theme",
-    "description": "Lightly Salted WordPress theme with Timber (Twig)",
-    "type": "wordpress-theme",
-    "require": {
-        "php": ">=8.1",
-        "timber/timber": "^2.0"
-    },
-}
