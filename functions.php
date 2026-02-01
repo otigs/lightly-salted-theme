@@ -12,21 +12,17 @@ if (!defined('WP_ENV')) {
     define('WP_ENVIRONMENT_TYPE', WP_ENV);
 }
 
-// Check if the required plugins are installed and activated.
-// If they aren't, this function redirects the template rendering to use
-// plugin-inactive.php instead and shows a warning in the admin backend.
-if (Init::checkRequiredPlugins()) {
+// Theme setup and component loading (init = after plugins loaded).
+add_action('init', function (): void {
     FileLoader::loadPhpFiles('inc');
-    add_action('after_setup_theme', [\Flynt\Init::class, 'initTheme']);
-    add_action('after_setup_theme', [\Flynt\Init::class, 'loadComponents'], 101);
-}
+    Init::initTheme();
+    Init::loadComponents();
+}, 0);
+
+// Load translations at init or later (WordPress 6.7+).
+add_action('init', function (): void {
+    load_theme_textdomain('flynt', get_template_directory() . '/languages');
+}, 1);
 
 // Remove the admin-bar inline-CSS as it isn't compatible with the sticky footer CSS.
-// This prevents unintended scrolling on pages with few content, when logged in.
 add_theme_support('admin-bar', ['callback' => '__return_false']);
-
-add_action('after_setup_theme', function (): void {
-    // Make theme available for translation.
-    // Translations can be filed in the /languages/ directory.
-    load_theme_textdomain('flynt', get_template_directory() . '/languages');
-});

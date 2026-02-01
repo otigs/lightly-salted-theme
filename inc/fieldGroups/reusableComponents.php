@@ -4,6 +4,9 @@ use ACFComposer\ACFComposer;
 use Flynt\Components;
 
 add_action('Flynt/afterRegisterComponents', function (): void {
+    if (!function_exists('acf_add_local_field_group') || !class_exists('ACFComposer\ACFComposer')) {
+        return;
+    }
     ACFComposer::registerFieldGroup([
         'name' => 'reusableComponents',
         'title' => __('Reusable Components', 'flynt'),

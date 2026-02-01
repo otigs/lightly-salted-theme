@@ -1,13 +1,13 @@
 # Lightly Salted Theme
 
-Custom Flynt-based WordPress theme for Lightly Salted. Built on [Flynt](https://www.flyntwp.com/) (Timber/Twig + ACF Pro) for component-based development.
+Custom Flynt-based WordPress theme for Lightly Salted. Built on [Flynt](https://www.flyntwp.com/) (Timber/Twig) for component-based development.
 
 ## Requirements
 
 - PHP 7.4+
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/) (LTS)
-- WordPress with **ACF Pro** and this theme installed in `wp-content/themes/`
+- WordPress with this theme installed in `wp-content/themes/`
 
 ## Installation
 
@@ -58,12 +58,12 @@ This theme is set up for **direct Git push** to Cloudways. Both `vendor/` and `d
 |------|---------|
 | `style.css` | Theme metadata (name, description, version). |
 | `functions.php` | Theme bootstrap. |
-| `composer.json` | PHP dependencies (Timber, ACF field group composer, etc.). |
+| `composer.json` | PHP dependencies (Timber, etc.). |
 | `package.json` | Node scripts and front-end build (Vite). |
 | `vendor/` | Composer PHP dependencies (committed for deployment). |
 | `dist/` | Compiled CSS/JS (committed for deployment). |
 | `assets/` | Source SCSS/JS and static assets. |
-| `Components/` | Flynt components (ACF + Twig + scripts/styles). |
+| `Components/` | Flynt components (Twig + scripts/styles). |
 | `inc/` | PHP includes (field groups, options, Timber, etc.). |
 | `lib/` | Theme PHP library (Flynt namespace). |
 | `templates/` | Twig layout templates. |

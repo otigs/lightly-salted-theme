@@ -20,7 +20,7 @@ add_filter('block_editor_settings_all', function (array $settings): array {
 }, 10);
 
 /*
- * Remove editor from Wordpress pages, since Flynt uses ACF.
+ * Remove editor from WordPress pages (Flynt uses component-based page layout).
  */
 add_action('init', function (): void {
     remove_post_type_support('page', 'editor');

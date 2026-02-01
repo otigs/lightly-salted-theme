@@ -55,13 +55,17 @@ class Options
 
         static::$initialized = true;
 
+        if (!function_exists('acf_add_options_page')) {
+            return;
+        }
+
         add_action('current_screen', function ($currentScreen): void {
             $currentScreenId = strtolower($currentScreen->id);
             foreach (static::OPTION_TYPES as $optionType => $option) {
                 $isTranslatable = $option['translatable'];
                 // NOTE: because the first subpage starts with toplevel instead (there is no overview page).
                 $toplevelPageId = strtolower('toplevel_page_' . $optionType);
-                $menuTitle = static::$optionPages[$optionType]['menu_title'];
+                $menuTitle = static::$optionPages[$optionType]['menu_title'] ?? '';
                 // NOTE: all other subpages have the parent menu-title in front instead.
                 $subPageId = strtolower(
                     sanitize_title($menuTitle) . '_page_' . $optionType
@@ -73,9 +77,7 @@ class Options
                     ) ||
                     StringHelpers::startsWith($subPageId, $currentScreenId);
                 if (!$isTranslatable && $isCurrentPage) {
-                    // Set acf field values to default language.
                     add_filter('acf/settings/current_language', [self::class, 'getDefaultAcfLanguage'], 101);
-                    // Hide language selector in admin bar.
                     add_action('wp_before_admin_bar_render', function (): void {
                         $adminBar = $GLOBALS['wp_admin_bar'];
                         $adminBar->remove_menu('WPML_ALS');
@@ -99,13 +101,15 @@ class Options
             $title = _x($option['title'], 'title', 'flynt');
             $slug = ucfirst($optionType) . 'Options';
 
-            acf_add_options_page([
-                'page_title'  => $title,
-                'menu_title'  => $title,
-                'redirect'    => true,
-                'menu_slug'   => $slug,
-                'icon_url'    => $option['icon']
-            ]);
+            if (function_exists('acf_add_options_page')) {
+                acf_add_options_page([
+                    'page_title'  => $title,
+                    'menu_title'  => $title,
+                    'redirect'    => true,
+                    'menu_slug'   => $slug,
+                    'icon_url'    => $option['icon']
+                ]);
+            }
 
             static::$optionPages[$optionType] = [
                 'menu_slug' => $slug,
@@ -138,27 +142,31 @@ class Options
                 'menu_slug' => $categorySlug,
                 'parent_slug' => $optionPage['menu_slug']
             ];
-            acf_add_options_page($pageConfig);
+            if (function_exists('acf_add_options_page')) {
+                acf_add_options_page($pageConfig);
+            }
             static::$optionPages[$optionType]['sub_pages'][$optionCategory] = [
                 'menu_slug' => $categorySlug,
                 'menu_title' => $categoryTitle
             ];
-            $fieldGroup = ACFComposer\ResolveConfig::forFieldGroup([
-                'name' => $categorySlug,
-                'title' => $categoryTitle,
-                'style' => 'seamless',
-                'fields' => [],
-                'location' => [
-                    [
+            if (function_exists('acf_add_local_field_group') && class_exists('ACFComposer\ResolveConfig')) {
+                $fieldGroup = ACFComposer\ResolveConfig::forFieldGroup([
+                    'name' => $categorySlug,
+                    'title' => $categoryTitle,
+                    'style' => 'seamless',
+                    'fields' => [],
+                    'location' => [
                         [
-                            'param' => 'options_page',
-                            'operator' => '==',
-                            'value' => $categorySlug
+                            [
+                                'param' => 'options_page',
+                                'operator' => '==',
+                                'value' => $categorySlug
+                            ]
                         ]
                     ]
-                ]
-            ]);
-            acf_add_local_field_group($fieldGroup);
+                ]);
+                acf_add_local_field_group($fieldGroup);
+            }
         }
     }
 
@@ -313,6 +321,9 @@ class Options
      */
     protected static function addOptionsFieldGroup(string $name, string $title, string $optionsPageSlug, array $fields)
     {
+        if (!function_exists('acf_add_local_field_group') || !class_exists('ACFComposer\ResolveConfig')) {
+            return;
+        }
         $fieldGroup = ACFComposer\ResolveConfig::forFieldGroup(
             [
                 'name' => $name,
@@ -369,13 +380,9 @@ class Options
      */
     protected static function checkRequiredHooks(string $optionType, string $scope, ?string $fieldName = null): bool
     {
-        if (did_action('acf/init') < 1) {
-            $parameters = "{$optionType}, {$scope}, ";
-            $parameters .= $fieldName ?? 'NULL';
-            trigger_error("Could not get option/s for [{$parameters}]. Required hooks have not yet been executed! Please make sure to run `Options::get()` after the `acf/init` action is finished.", E_USER_WARNING);
+        if (!function_exists('acf_add_options_page')) {
             return false;
         }
-
         return true;
     }
 
@@ -389,10 +396,12 @@ class Options
      */
     protected static function getOptionField(string $key, bool $isTranslatable)
     {
+        if (!function_exists('get_field')) {
+            return null;
+        }
         if ($isTranslatable) {
             $option = get_field('field_' . $key, 'option');
         } else {
-            // Switch to default language to get global options.
             add_filter('acf/settings/current_language', [self::class, 'getDefaultAcfLanguage'], 100);
             $option = get_field('field_' . $key, 'option');
             remove_filter('acf/settings/current_language', [self::class, 'getDefaultAcfLanguage'], 100);
@@ -408,6 +417,6 @@ class Options
      */
     public static function getDefaultAcfLanguage()
     {
-        return acf_get_setting('default_language');
+        return function_exists('acf_get_setting') ? acf_get_setting('default_language') : '';
     }
 }
