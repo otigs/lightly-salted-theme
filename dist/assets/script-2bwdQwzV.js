@@ -1,0 +1,1 @@
+function i(o){const e=window.matchMedia("(min-width: 1024px)");e.addEventListener("change",n),n();function n(){e.matches&&t()}function t(){const d=document.getElementById("wpadminbar")?document.getElementById("wpadminbar").offsetHeight:0;document.documentElement.style.scrollPaddingTop=`${d}px`}}export{i as default};
