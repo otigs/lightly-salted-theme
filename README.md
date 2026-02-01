@@ -44,13 +44,13 @@ Custom Flynt-based WordPress theme for Lightly Salted. Built on [Flynt](https://
 
 ## Deployment (Cloudways / Git push)
 
-This theme is set up for **direct Git push** to Cloudways. The `dist/` folder is **tracked in the repo** so that built CSS/JS are deployed without a build step on the server.
+This theme is set up for **direct Git push** to Cloudways. Both `vendor/` and `dist/` are **tracked in the repo** so that PHP dependencies and built CSS/JS are deployed without running `composer install` or a build step on the server.
 
 **Before pushing:**
 
-1. Run `composer install` (if you added/updated PHP deps).
+1. Run `composer install` (if you added/updated PHP deps) so `vendor/` is up to date.
 2. Run `npm run build` so `dist/` is up to date.
-3. Commit and push; the server will use the committed `dist/` assets.
+3. Commit and push; the server will use the committed `vendor/` and `dist/` assets.
 
 ## File structure (root)
 
@@ -60,6 +60,7 @@ This theme is set up for **direct Git push** to Cloudways. The `dist/` folder is
 | `functions.php` | Theme bootstrap. |
 | `composer.json` | PHP dependencies (Timber, ACF field group composer, etc.). |
 | `package.json` | Node scripts and front-end build (Vite). |
+| `vendor/` | Composer PHP dependencies (committed for deployment). |
 | `dist/` | Compiled CSS/JS (committed for deployment). |
 | `assets/` | Source SCSS/JS and static assets. |
 | `Components/` | Flynt components (ACF + Twig + scripts/styles). |
