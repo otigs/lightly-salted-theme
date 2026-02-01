@@ -56,21 +56,21 @@ add_action('wp_enqueue_scripts', function (): void {
         wp_get_theme()->get('Version')
     );
 
-    if (file_exists(get_stylesheet_directory() . '/src/style.css')) {
+    if (file_exists(get_stylesheet_directory() . '/assets/css/style.css')) {
         wp_enqueue_style(
             'lightly-salted-custom',
-            get_stylesheet_directory_uri() . '/src/style.css',
+            get_stylesheet_directory_uri() . '/assets/css/style.css',
             ['lightly-salted-style'],
-            (string) filemtime(get_stylesheet_directory() . '/src/style.css')
+            (string) filemtime(get_stylesheet_directory() . '/assets/css/style.css')
         );
     }
 
-    if (file_exists(get_stylesheet_directory() . '/src/main.js')) {
+    if (file_exists(get_stylesheet_directory() . '/assets/js/main.js')) {
         wp_enqueue_script(
             'lightly-salted-script',
-            get_stylesheet_directory_uri() . '/src/main.js',
+            get_stylesheet_directory_uri() . '/assets/js/main.js',
             [],
-            (string) filemtime(get_stylesheet_directory() . '/src/main.js'),
+            (string) filemtime(get_stylesheet_directory() . '/assets/js/main.js'),
             true
         );
     }
