@@ -1,0 +1,15 @@
+{% if pagination.pages %}
+<nav class="pagination" aria-label="Posts">
+    <ul class="pagination-list">
+        {% for page in pagination.pages %}
+            <li>
+                {% if page.link %}
+                    <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                {% else %}
+                    <span class="{{ page.class }}">{{ page.title }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}

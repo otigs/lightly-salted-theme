@@ -1,0 +1,16 @@
+<header id="masthead" class="site-header">
+    <div class="site-branding">
+        <a href="{{ site.url }}" rel="home">{{ site.name }}</a>
+        {% if site.description %}
+            <p class="site-description">{{ site.description }}</p>
+        {% endif %}
+    </div>
+    <nav id="site-navigation" class="main-navigation" aria-label="Primary">
+        {{ function('wp_nav_menu', {
+            'theme_location': 'primary',
+            'menu_id': 'primary-menu',
+            'container': false,
+            'fallback_cb': false
+        }) }}
+    </nav>
+</header>

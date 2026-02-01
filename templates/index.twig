@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <h1 class="page-title">Latest posts</h1>
+
+    {% if posts %}
+        <ul class="posts-list">
+            {% for post in posts %}
+                <li>
+                    <a href="{{ post.link }}">{{ post.title }}</a>
+                    <time datetime="{{ post.date('c') }}">{{ post.date }}</time>
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% if posts.pagination.pages %}
+            {% include 'partials/pagination.twig' with { pagination: posts.pagination } %}
+        {% endif %}
+    {% else %}
+        <p>No posts yet.</p>
+    {% endif %}
+{% endblock %}
