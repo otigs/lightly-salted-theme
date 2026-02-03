@@ -41,7 +41,9 @@ class TimberDynamicResize
      */
     public function __construct()
     {
-        $this->enabled = get_field('field_global_TimberDynamicResize_dynamicImageGeneration', 'option');
+        $this->enabled = function_exists('get_field')
+            ? (bool) get_field('field_global_TimberDynamicResize_dynamicImageGeneration', 'option')
+            : false;
         if ($this->enabled) {
             $this->createTable();
             $this->addDynamicHooks();

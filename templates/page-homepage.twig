@@ -1,0 +1,285 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {% set hero = post.meta('hero') %}
+  {% set services = post.meta('services') %}
+  {% set case_study = post.meta('case_study') %}
+  {% set values = post.meta('values') %}
+  {% set contact = post.meta('contact') %}
+  {# Footer is global via SiteFooter component in _document.twig #}
+
+  {# Hero #}
+  {% if hero %}
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          {% if hero.heading %}
+            <h1>{{ hero.heading }}</h1>
+          {% endif %}
+          {% if hero.subtitle %}
+            <p class="hero-subtitle">{{ hero.subtitle }}</p>
+          {% endif %}
+          <div class="hero-ctas">
+            {% if hero.primary_cta_text %}
+              <a href="{{ hero.primary_cta_link|default('#contact') }}" class="btn btn-primary">{{ hero.primary_cta_text }}</a>
+            {% endif %}
+            {% if hero.secondary_cta_text %}
+              <a href="{{ hero.secondary_cta_link|default('#work') }}" class="btn btn-secondary">{{ hero.secondary_cta_text }}</a>
+            {% endif %}
+          </div>
+          {% if hero.trust_items %}
+            <div class="hero-trust">
+              {% for item in hero.trust_items %}
+                {% if item.text %}
+                  <span class="trust-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    {{ item.text }}
+                  </span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        {% if hero.hero_image %}
+          <div class="hero-illustration">
+            <img src="{{ hero.hero_image.url|default(function('wp_get_attachment_image_url', hero.hero_image, 'full')) }}" alt="" aria-hidden="true" loading="eager">
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {# Services #}
+  {% if services %}
+    <section id="services" class="services">
+      <div class="container">
+        <header class="section-header">
+          {% if services.eyebrow %}
+            <p class="section-eyebrow">{{ services.eyebrow }}</p>
+          {% endif %}
+          {% if services.heading %}
+            <h2>{{ services.heading }}</h2>
+          {% endif %}
+          {% if services.intro %}
+            <p class="section-intro">{{ services.intro }}</p>
+          {% endif %}
+        </header>
+        {% if services.services %}
+          <div class="services-grid">
+            {% for service in services.services %}
+              <article class="service-card">
+                {% if service.icon %}
+                  <div class="service-icon">
+                    <img src="{{ service.icon.url|default(function('wp_get_attachment_image_url', service.icon, 'full')) }}" alt="" width="80" height="80">
+                  </div>
+                {% endif %}
+                {% if service.title %}
+                  <h3>{{ service.title }}</h3>
+                {% endif %}
+                {% if service.description %}
+                  <p>{{ service.description }}</p>
+                {% endif %}
+                {% if service.link %}
+                  <a href="{{ service.link }}" class="service-link">Learn more →</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {# Case Study #}
+  {% if case_study %}
+    <section id="work" class="case-study">
+      <div class="container">
+        <div class="case-study-inner">
+          <div class="case-study-content">
+            {% if case_study.eyebrow %}
+              <p class="section-eyebrow">{{ case_study.eyebrow }}</p>
+            {% endif %}
+            {% if case_study.heading %}
+              <h2>{{ case_study.heading }}</h2>
+            {% endif %}
+            {% if case_study.quote %}
+              <blockquote>
+                <p>{{ case_study.quote }}</p>
+                <footer>
+                  <cite>
+                    {% if case_study.cite_name %}
+                      <strong>{{ case_study.cite_name }}</strong>
+                    {% endif %}
+                    {% if case_study.cite_org %}
+                      <span>{{ case_study.cite_org }}</span>
+                    {% endif %}
+                  </cite>
+                </footer>
+              </blockquote>
+            {% endif %}
+            {% if case_study.cta_text %}
+              <a href="{{ case_study.cta_link|default('#') }}" class="btn btn-secondary">{{ case_study.cta_text }}</a>
+            {% endif %}
+          </div>
+          {% if case_study.image %}
+            <div class="case-study-visual">
+              <img src="{{ case_study.image.url|default(function('wp_get_attachment_image_url', case_study.image, 'full')) }}" alt="" aria-hidden="true">
+            </div>
+          {% endif %}
+        </div>
+        {% if case_study.client_logos_label or case_study.client_logos %}
+          <div class="client-logos">
+            {% if case_study.client_logos_label %}
+              <p class="client-logos-label">{{ case_study.client_logos_label }}</p>
+            {% endif %}
+            {% if case_study.client_logos %}
+              <div class="logo-grid">
+                {% for logo in case_study.client_logos %}
+                  <div class="client-logo" aria-label="{{ logo.name|e }}">{{ logo.name }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {# Values #}
+  {% if values %}
+    <section id="about" class="values">
+      <div class="container">
+        <header class="section-header section-header--center">
+          {% if values.eyebrow %}
+            <p class="section-eyebrow">{{ values.eyebrow }}</p>
+          {% endif %}
+          {% if values.heading %}
+            <h2>{{ values.heading }}</h2>
+          {% endif %}
+          {% if values.intro %}
+            <p class="section-intro">{{ values.intro }}</p>
+          {% endif %}
+        </header>
+        {% if values.value_cards %}
+          <div class="values-grid">
+            {% for card in values.value_cards %}
+              <article class="value-card {{ card.accent ? 'value-card--accent' }}">
+                {% if card.icon_image %}
+                  <div class="value-icon">
+                    <img src="{{ card.icon_image.url|default(function('wp_get_attachment_image_url', card.icon_image, 'full')) }}" alt="" width="64" height="64">
+                  </div>
+                {% endif %}
+                {% if card.title %}
+                  <h3>{{ card.title }}</h3>
+                {% endif %}
+                {% if card.description %}
+                  <p>{{ card.description }}</p>
+                {% endif %}
+                {% if card.badge %}
+                  <div class="value-badge">{{ card.badge }}</div>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if values.methodology_heading or values.methodology_items %}
+          <div class="methodology">
+            {% if values.methodology_heading %}
+              <h3>{{ values.methodology_heading }}</h3>
+            {% endif %}
+            {% if values.methodology_items %}
+              <div class="methodology-items">
+                {% for item in values.methodology_items %}
+                  <div class="methodology-item">
+                    <span class="methodology-label">{{ item.label }}</span>
+                    <span class="methodology-detail">{{ item.detail }}</span>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {# Contact #}
+  {% if contact %}
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-content">
+            {% if contact.eyebrow %}
+              <p class="section-eyebrow">{{ contact.eyebrow }}</p>
+            {% endif %}
+            {% if contact.heading %}
+              <h2>{{ contact.heading }}</h2>
+            {% endif %}
+            {% if contact.intro %}
+              <p>{{ contact.intro }}</p>
+            {% endif %}
+            <div class="contact-methods">
+              {% if contact.phone_number %}
+                <a href="tel:{{ contact.phone_number|replace({' ': ''}) }}" class="contact-method contact-method--phone">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span>
+                    <strong>{{ contact.phone_label|default('Call us') }}</strong>
+                    {{ contact.phone_number }}
+                  </span>
+                </a>
+              {% endif %}
+              {% if contact.email_address %}
+                <a href="mailto:{{ contact.email_address }}" class="contact-method">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>
+                    <strong>{{ contact.email_label|default('Email us') }}</strong>
+                    {{ contact.email_address }}
+                  </span>
+                </a>
+              {% endif %}
+            </div>
+            {% if contact.contact_trust_text %}
+              <div class="contact-trust">
+                {% if contact.contact_trust_image %}
+                  <img src="{{ contact.contact_trust_image.url|default(function('wp_get_attachment_image_url', contact.contact_trust_image, 'full')) }}" alt="" width="40" height="40">
+                {% endif %}
+                <p>{{ contact.contact_trust_text|raw }}</p>
+              </div>
+            {% endif %}
+          </div>
+          <div class="contact-form-wrapper">
+            {% if contact.form_shortcode %}
+              {{ function('do_shortcode', contact.form_shortcode) }}
+            {% else %}
+              <form class="contact-form" action="{{ function('admin_url', 'admin-post.php') }}" method="POST">
+                <input type="hidden" name="action" value="lightly_salted_contact">
+                {{ function('wp_nonce_field', 'lightly_salted_contact') }}
+                <div class="form-group">
+                  <label for="homepage-name">Your name</label>
+                  <input type="text" id="homepage-name" name="name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="homepage-email">Email address</label>
+                  <input type="email" id="homepage-email" name="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                  <label for="homepage-message">Tell us about your project</label>
+                  <textarea id="homepage-message" name="message" rows="4" placeholder="What are you looking to achieve?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Send message</button>
+              </form>
+            {% endif %}
+            {% if contact.form_badges %}
+              <div class="form-badges">
+                {% for badge in contact.form_badges %}
+                  <span class="badge">{{ badge.text }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+{% endblock %}

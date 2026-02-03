@@ -3,7 +3,7 @@
         'name' => 'lightlysalted/theme',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3909c692e4a113fb0eb91a27e38b3d8da0ec4527',
+        'reference' => 'ee8ddcc8c462564fc6294c4f90dfb60eac248921',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'lightlysalted/theme' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3909c692e4a113fb0eb91a27e38b3d8da0ec4527',
+            'reference' => 'ee8ddcc8c462564fc6294c4f90dfb60eac248921',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

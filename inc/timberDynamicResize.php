@@ -5,10 +5,12 @@ namespace Flynt\TimberDynamicResize;
 use Flynt\Utils\Options;
 use Flynt\Utils\TimberDynamicResize;
 
-add_action('acf/init', function (): void {
+// Instantiate on init so the Twig filter is registered before any template is rendered.
+// Priority 20 runs after ACF (which typically hooks init at 5), so get_field is available.
+add_action('init', function (): void {
     global $timberDynamicResize;
     $timberDynamicResize = new TimberDynamicResize();
-});
+}, 20);
 
 Options::addGlobal('TimberDynamicResize', [
     [

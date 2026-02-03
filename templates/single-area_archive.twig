@@ -1,0 +1,29 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-areas-archive">
+    <header class="entry-header">
+      <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
+      {% if post.meta('hero_intro') %}<p class="intro">{{ post.meta('hero_intro') }}</p>{% endif %}
+    </header>
+    {% if post.meta('featured_areas') %}
+      <section class="featured-areas">
+        <h2>{{ post.meta('featured_areas_heading')|default('Featured areas') }}</h2>
+        <div class="areas-grid">
+          {% for area in post.meta('featured_areas') %}
+            <article class="area-card">
+              <h3>{{ area.area_name }}</h3>
+              {% if area.area_descriptor %}<p>{{ area.area_descriptor }}</p>{% endif %}
+              {% if area.area_url %}<a href="{{ area.area_url }}">View</a>{% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

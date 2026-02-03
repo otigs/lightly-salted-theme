@@ -1,0 +1,40 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-service">
+    <header class="entry-header">
+      <h1>{{ post.meta('service_name')|default(post.title) }}</h1>
+      {% if post.meta('tagline') %}<p class="tagline">{{ post.meta('tagline') }}</p>{% endif %}
+    </header>
+    {% if post.meta('description') %}
+      <section class="description">{{ post.meta('description') }}</section>
+    {% endif %}
+    {% if post.meta('included_heading') and post.meta('included_features') %}
+      <section class="included">
+        <h2>{{ post.meta('included_heading') }}</h2>
+        <ul>
+          {% for f in post.meta('included_features') %}
+            <li><strong>{{ f.feature_title }}</strong>{% if f.feature_detail %} {{ f.feature_detail }}{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+    {% if post.meta('process_heading') and post.meta('process_steps') %}
+      <section class="process">
+        <h2>{{ post.meta('process_heading') }}</h2>
+        <ol>
+          {% for s in post.meta('process_steps') %}
+            <li><strong>{{ s.step_title }}</strong>{% if s.step_detail %} {{ s.step_detail }}{% endif %}</li>
+          {% endfor %}
+        </ol>
+      </section>
+    {% endif %}
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+        {% if post.meta('primary_cta_label') %}<a href="/contact/" class="btn">{{ post.meta('primary_cta_label') }}</a>{% endif %}
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

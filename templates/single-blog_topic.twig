@@ -1,0 +1,19 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-blog-topic">
+    <header class="entry-header">
+      <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
+      {% if post.meta('hero_subheadline') %}<p class="subheadline">{{ post.meta('hero_subheadline') }}</p>{% endif %}
+    </header>
+    {# Posts listing for this topic would be via query by category/taxonomy #}
+    <section class="posts-listing">
+      <p>Blog posts for this topic (query by category/taxonomy)</p>
+    </section>
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

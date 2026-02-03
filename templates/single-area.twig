@@ -1,0 +1,19 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-area">
+    <header class="entry-header">
+      <h1>{{ post.meta('hero_title')|default(post.meta('area_name')|default(post.title)) }}</h1>
+      {% if post.meta('hero_intro') %}<p class="intro">{{ post.meta('hero_intro') }}</p>{% endif %}
+    </header>
+    {% if post.meta('local_agency_body') %}
+      <section class="local-agency">{{ post.meta('local_agency_body')|raw }}</section>
+    {% endif %}
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

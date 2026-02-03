@@ -1,0 +1,117 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-homepage">
+    {% if post.meta('hero_headline') %}
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>{{ post.meta('hero_headline') }}</h1>
+            {% if post.meta('hero_subheadline') %}
+              <p class="hero-subtitle">{{ post.meta('hero_subheadline') }}</p>
+            {% endif %}
+            <div class="hero-ctas">
+              {% if post.meta('hero_primary_cta_label') %}
+                <a href="#contact" class="btn btn-primary">{{ post.meta('hero_primary_cta_label') }}</a>
+              {% endif %}
+              {% if post.meta('hero_secondary_cta_label') %}
+                <a href="/services/" class="btn btn-secondary">{{ post.meta('hero_secondary_cta_label') }}</a>
+              {% endif %}
+            </div>
+            {% if post.meta('trust_badges') %}
+              <div class="hero-trust">
+                {% for item in post.meta('trust_badges') %}
+                  {% if item.badge_name %}
+                    <span class="trust-item">{{ item.badge_name }}</span>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('services_headline') or post.meta('service_cards') %}
+      <section id="services" class="services">
+        <div class="container">
+          <header class="section-header">
+            {% if post.meta('services_headline') %}<h2>{{ post.meta('services_headline') }}</h2>{% endif %}
+            {% if post.meta('services_intro') %}<p class="section-intro">{{ post.meta('services_intro') }}</p>{% endif %}
+          </header>
+          {% if post.meta('service_cards') %}
+            <div class="services-grid">
+              {% for card in post.meta('service_cards') %}
+                <article class="service-card">
+                  {% if card.service_name %}<h3>{{ card.service_name }}</h3>{% endif %}
+                  {% if card.service_summary %}<p>{{ card.service_summary }}</p>{% endif %}
+                  {% if card.service_url %}<a href="{{ card.service_url }}">{{ post.meta('services_cta_label')|default('Learn more') }}</a>{% endif %}
+                </article>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if post.meta('services_cta_label') %}
+            <p><a href="/services/" class="btn">{{ post.meta('services_cta_label') }}</a></p>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('featured_work_headline') %}
+      <section id="work" class="featured-work">
+        <div class="container">
+          <h2>{{ post.meta('featured_work_headline') }}</h2>
+          {% if post.meta('featured_work_intro') %}<p>{{ post.meta('featured_work_intro') }}</p>{% endif %}
+          {% if post.meta('featured_work_cta_label') %}
+            <a href="/case-studies/" class="btn">{{ post.meta('featured_work_cta_label') }}</a>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('differentiators_headline') or post.meta('differentiators') %}
+      <section class="differentiators">
+        <div class="container">
+          {% if post.meta('differentiators_headline') %}<h2>{{ post.meta('differentiators_headline') }}</h2>{% endif %}
+          {% if post.meta('differentiators') %}
+            <ul>
+              {% for diff in post.meta('differentiators') %}
+                <li><strong>{{ diff.diff_title }}</strong> {{ diff.diff_body }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('areas_headline') %}
+      <section class="areas">
+        <div class="container">
+          <h2>{{ post.meta('areas_headline') }}</h2>
+          {% if post.meta('areas_body') %}<p>{{ post.meta('areas_body') }}</p>{% endif %}
+          {% if post.meta('areas_cta_label') %}
+            <a href="/areas-covered/" class="btn">{{ post.meta('areas_cta_label') }}</a>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('final_cta_headline') %}
+      <section id="contact" class="final-cta">
+        <div class="container">
+          <h2>{{ post.meta('final_cta_headline') }}</h2>
+          {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+          {% if post.meta('final_cta_primary_label') %}
+            <a href="#contact" class="btn btn-primary">{{ post.meta('final_cta_primary_label') }}</a>
+          {% endif %}
+          {% if post.meta('final_cta_secondary_label') %}
+            <a href="/contact/" class="btn btn-secondary">{{ post.meta('final_cta_secondary_label') }}</a>
+          {% endif %}
+          {% if post.meta('final_cta_microcopy') %}
+            <p class="microcopy">{{ post.meta('final_cta_microcopy') }}</p>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

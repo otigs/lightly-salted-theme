@@ -1,0 +1,28 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-case-study">
+    <header class="entry-header">
+      <h1>{{ post.meta('project_headline')|default(post.title) }}</h1>
+      {% if post.meta('client_name') %}<p class="client">{{ post.meta('client_name') }}</p>{% endif %}
+    </header>
+    {% if post.meta('challenge') %}
+      <section class="challenge">{{ post.meta('challenge')|raw }}</section>
+    {% endif %}
+    {% if post.meta('approach') %}
+      <section class="approach">{{ post.meta('approach')|raw }}</section>
+    {% endif %}
+    {% if post.meta('solution') %}
+      <section class="solution">{{ post.meta('solution')|raw }}</section>
+    {% endif %}
+    {% if post.meta('results') %}
+      <section class="results">{{ post.meta('results')|raw }}</section>
+    {% endif %}
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

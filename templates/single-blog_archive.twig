@@ -1,0 +1,28 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-blog-archive">
+    <header class="entry-header">
+      <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
+      {% if post.meta('hero_subheadline') %}<p class="subheadline">{{ post.meta('hero_subheadline') }}</p>{% endif %}
+    </header>
+    {% if post.meta('topic_cards') %}
+      <section class="topic-cards">
+        <h2>{{ post.meta('topic_nav_headline')|default('Browse by topic') }}</h2>
+        <ul>
+          {% for card in post.meta('topic_cards') %}
+            <li><a href="{{ card.topic_url }}">{{ card.topic_name }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+    <section class="posts-listing">
+      <p>Latest posts (query <code>post</code> type)</p>
+    </section>
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

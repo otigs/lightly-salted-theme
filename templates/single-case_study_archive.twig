@@ -1,0 +1,20 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-case-studies-archive">
+    <header class="entry-header">
+      <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
+      {% if post.meta('hero_intro') %}<p class="intro">{{ post.meta('hero_intro') }}</p>{% endif %}
+    </header>
+    {# Case study grid would be populated via query; placeholder for structure #}
+    <section class="case-study-grid">
+      <p>Case studies listing (query by post type <code>case_study</code>)</p>
+    </section>
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="single-service-archive">
+    <header class="entry-header">
+      <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
+      {% if post.meta('hero_subheadline') %}<p class="subheadline">{{ post.meta('hero_subheadline') }}</p>{% endif %}
+    </header>
+    {% if post.meta('service_cards') %}
+      <section class="service-cards">
+        <h2>{{ post.meta('services_section_headline')|default('Our services') }}</h2>
+        <div class="service-cards-grid">
+          {% for card in post.meta('service_cards') %}
+            <article class="service-card">
+              <h3>{{ card.service_name }}</h3>
+              {% if card.service_summary %}<p>{{ card.service_summary }}</p>{% endif %}
+              {% if card.service_url %}<a href="{{ card.service_url }}">Learn more</a>{% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+    {% if post.meta('final_cta_headline') %}
+      <section class="final-cta">
+        <h2>{{ post.meta('final_cta_headline') }}</h2>
+        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+        {% if post.meta('final_cta_primary_label') %}<a href="/contact/" class="btn">{{ post.meta('final_cta_primary_label') }}</a>{% endif %}
+      </section>
+    {% endif %}
+  </article>
+{% endblock %}
