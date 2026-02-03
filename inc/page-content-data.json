@@ -1,0 +1,168 @@
+{
+  "homepage": {
+    "hero_headline": "Your digital growth partner",
+    "hero_subheadline": "Expert web solutions and strategic support for growing businesses. Based in Dorset, serving organisations who value quality, transparency, and sustainability.",
+    "hero_primary_cta_label": "Book a discovery call",
+    "hero_secondary_cta_label": "See our work",
+    "trust_badges": [
+      {"badge_name": "Good Business Charter", "badge_image": ""},
+      {"badge_name": "1% for the Planet", "badge_image": ""},
+      {"badge_name": "Ecologi", "badge_image": ""}
+    ],
+    "video_testimonials_headline": "Hear from our clients",
+    "video_testimonials_note": "[Video carousel: 3-5 client video testimonials, each 30-60 seconds]",
+    "services_headline": "What we do",
+    "services_intro": "We design, build, and support websites that work harder for your business. From initial concept to ongoing growth.",
+    "service_cards": [
+      {"service_name": "Web Design", "service_summary": "Bespoke WordPress websites built for performance and growth", "service_url": ""},
+      {"service_name": "Hosting & Maintenance", "service_summary": "Fast, secure UK hosting with proactive care", "service_url": ""},
+      {"service_name": "Support", "service_summary": "Expert help when you need changes or improvements", "service_url": ""},
+      {"service_name": "Strategic Development", "service_summary": "Partnership approach to digital growth", "service_url": ""}
+    ],
+    "services_cta_label": "Explore our services",
+    "featured_work_headline": "Work we're proud of",
+    "featured_work_intro": "Real projects, real results. See how we've helped organisations like yours.",
+    "featured_work_note": "[Display: 3 featured case studies with thumbnail, client name, brief outcome, and link]",
+    "featured_work_cta_label": "See all case studies",
+    "differentiators_headline": "Why businesses choose us",
+    "differentiators": [
+      {"diff_title": "Positive for people", "diff_body": "Living Wage employer. Good Business Charter signatory."},
+      {"diff_title": "Positive for planet", "diff_body": "100% renewable energy hosting. Trees planted with every project. 1% for the Planet member."},
+      {"diff_title": "Positive for business", "diff_body": "Honest pricing, no hidden fees. We build long-term partnerships, not one-off transactions."}
+    ],
+    "testimonials_headline": "What our clients say",
+    "testimonials_note": "[Display: 2-3 client testimonials with name, role, company, and quote] + optional logo bar",
+    "blog_preview_headline": "Insights & resources",
+    "blog_preview_intro": "Practical thinking to help your business grow online.",
+    "blog_preview_note": "[Display: Latest 3 blog posts with title, category tag, publication date, and excerpt]",
+    "blog_preview_cta_label": "Read our blog",
+    "areas_headline": "Proudly Dorset-based",
+    "areas_body": "Based in Wimborne, we work with organisations throughout Dorset—from Bournemouth and Poole to the rural heart of the county. Local knowledge, personal service.",
+    "areas_note": "[Display: Area links to Bournemouth, Poole, Dorset pages]",
+    "areas_cta_label": "Find your area",
+    "final_cta_headline": "Ready to talk?",
+    "final_cta_body": "Whether you're starting a new project or looking for ongoing support, we'd love to hear from you. No obligation—just an honest conversation about how we can help.",
+    "final_cta_primary_label": "Book a discovery call",
+    "final_cta_secondary_label": "Get in touch",
+    "final_cta_microcopy": "Free 30-minute call. We'll discuss your goals and see if we're a good fit."
+  },
+  "services_page": {
+    "hero_headline": "Our services",
+    "hero_subheadline": "Expert web solutions and strategic support for growing businesses. From initial concept to ongoing partnership.",
+    "primary_cta_label": "Book a discovery call",
+    "secondary_cta_label": "See pricing",
+    "services_section_headline": "What we offer",
+    "service_cards": [
+      {"service_name": "Web Design", "service_summary": "Bespoke WordPress websites built for performance, conversion, and growth.", "service_url": ""},
+      {"service_name": "WordPress Hosting", "service_summary": "Fast UK cloud hosting powered by 100% renewable energy.", "service_url": ""},
+      {"service_name": "WordPress Maintenance", "service_summary": "Regular updates, security checks, and backups to keep your site safe.", "service_url": ""},
+      {"service_name": "SEO", "service_summary": "Sustainable search strategies that help the right people find you.", "service_url": ""},
+      {"service_name": "Digital Growth Support", "service_summary": "Strategic partnership to transform your digital presence.", "service_url": ""}
+    ],
+    "how_we_work_headline": "How we work",
+    "process_steps": [
+      {"step_title": "Discovery", "step_detail": "We learn about your business, goals, and audience"},
+      {"step_title": "Planning", "step_detail": "We map out the structure and strategy"},
+      {"step_title": "Delivery", "step_detail": "We design, build, or implement with care"},
+      {"step_title": "Support", "step_detail": "We're here for the long term"}
+    ],
+    "pricing_headline": "Transparent pricing",
+    "pricing_body": "We believe in being upfront about costs. Every project is different, but we'll always give you a clear quote before we start.",
+    "pricing_cta_label": "See our pricing",
+    "featured_work_headline": "Services in action",
+    "featured_work_note": "[Display: 2-3 case studies demonstrating service outcomes with thumbnail, client name, services provided, key result]",
+    "testimonial_note": "[Display: Client testimonial highlighting service experience—with name, role, company]",
+    "final_cta_headline": "Ready to talk?",
+    "final_cta_body": "Let's discuss what you need. No obligation—just an honest conversation about how we can help.",
+    "final_cta_primary_label": "Book a discovery call",
+    "final_cta_secondary_label": "Get in touch",
+    "final_cta_microcopy": "Free 30-minute call to discuss your needs."
+  },
+  "case_studies_page": {
+    "hero_title": "Our Work",
+    "hero_intro": "Real projects. Real results. See how we've helped businesses like yours achieve their digital goals.",
+    "breadcrumb_label": "Home → Our Work",
+    "alternative_titles": "Case Studies | Client Success Stories | Featured Work",
+    "filters_label": "Filter by:",
+    "industry_filters": [
+      {"filter_label": "All Industries"},
+      {"filter_label": "Healthcare & Wellbeing"},
+      {"filter_label": "Environment & Sustainability"},
+      {"filter_label": "Commercial & B2B"},
+      {"filter_label": "Charities & Faith"},
+      {"filter_label": "Professional Services"}
+    ],
+    "service_filters": [
+      {"filter_label": "All Services"},
+      {"filter_label": "Web Design & Build"},
+      {"filter_label": "E-commerce"},
+      {"filter_label": "Branding"},
+      {"filter_label": "Strategic Development"}
+    ],
+    "featured_case_study_note": "[Featured label + large image + client + headline + key metric + brief description]",
+    "case_study_grid_note": "[Grid layout: 2-3 columns, consistent cards, load more pagination]",
+    "results_summary_headline": "The numbers speak",
+    "results_summary_metrics": [
+      {"metric_label": "[X]+ websites launched", "metric_detail": "Helping businesses establish their digital presence"},
+      {"metric_label": "[X]% average increase in enquiries", "metric_detail": "Through strategic UX and conversion focus"},
+      {"metric_label": "[X] years average client relationship", "metric_detail": "Because we build partnerships, not projects"},
+      {"metric_label": "[X] trees planted", "metric_detail": "One for every website we create"}
+    ],
+    "testimonial_strip_note": "[2-3 short client quotes with names and companies]",
+    "final_cta_headline": "Ready to become our next success story?",
+    "final_cta_body": "Let's talk about your project. No obligation—just an honest conversation about how we can help.",
+    "final_cta_primary_label": "Book a discovery call",
+    "final_cta_secondary_label": "Get in touch"
+  },
+  "blog_page": {
+    "hero_headline": "Blog",
+    "hero_subheadline": "Practical thinking to help your business grow online. Guides, strategies, and solutions from our team.",
+    "breadcrumb_label": "Home → Blog",
+    "featured_post_note": "[Display: Latest or editorially selected featured post with large thumbnail, headline, excerpt, publication date, and category tag]",
+    "topic_nav_headline": "Browse by topic",
+    "topic_cards": [
+      {"topic_name": "Learn", "topic_summary": "Practical guides and how-tos", "topic_url": ""},
+      {"topic_name": "Plan", "topic_summary": "Strategic thinking and planning", "topic_url": ""},
+      {"topic_name": "Solve", "topic_summary": "Problem-solving and troubleshooting", "topic_url": ""},
+      {"topic_name": "Company News", "topic_summary": "Updates from Lightly Salted", "topic_url": ""}
+    ],
+    "post_listing_note": "[Display: All posts in reverse chronological order. Each post shows: headline, publication date, category tag, 2-3 sentence excerpt, thumbnail (if available), author name]",
+    "pagination_mode": "load_more",
+    "newsletter_headline": "Get insights delivered",
+    "newsletter_body": "Subscribe to receive our latest articles straight to your inbox. No spam, just practical thinking.",
+    "newsletter_cta_label": "Subscribe",
+    "newsletter_microcopy": "Join [X] subscribers. Unsubscribe anytime.",
+    "final_cta_headline": "Need hands-on help?",
+    "final_cta_body": "Our blog shares what we know. If you'd like us to apply it to your business, let's talk.",
+    "final_cta_primary_label": "Book a discovery call"
+  },
+  "areas_covered_page": {
+    "hero_title": "Areas We Cover",
+    "hero_intro": "Based in Wimborne, we work with businesses throughout Dorset and beyond. Local knowledge, personal service, wherever you are.",
+    "breadcrumb_label": "Home → Areas We Cover",
+    "map_display_note": "[Interactive or static map showing coverage area centred on Dorset]",
+    "featured_areas_heading": "Featured areas",
+    "featured_areas": [
+      {"area_name": "Bournemouth", "area_descriptor": "Digital solutions for Bournemouth businesses", "area_image": "", "area_url": ""},
+      {"area_name": "Poole", "area_descriptor": "Web design and support in Poole", "area_image": "", "area_url": ""},
+      {"area_name": "Wimborne", "area_descriptor": "Our home base in the heart of Dorset", "area_image": "", "area_url": ""},
+      {"area_name": "Christchurch", "area_descriptor": "Serving the Christchurch business community", "area_image": "", "area_url": ""},
+      {"area_name": "Dorchester", "area_descriptor": "County town expertise", "area_image": "", "area_url": ""}
+    ],
+    "all_areas_heading": "All areas we serve",
+    "all_areas_note": "Alphabetical or regional groupings of all location pages. Example list: Blandford Forum | Bournemouth | Bridport | Christchurch | Dorchester | Ferndown | Lyme Regis | Poole | Shaftesbury | Sherborne | Swanage | Wareham | Weymouth | Wimborne",
+    "why_local_heading": "Why work with a local agency?",
+    "why_local_body": "<p>We're not a faceless agency in a distant city. Based in Wimborne, we understand Dorset businesses because we're part of the community. When you work with us, you get face-to-face meetings, local knowledge, and a team that genuinely cares about your success.</p>",
+    "why_local_points": [
+      {"point_title": "Face-to-face available", "point_detail": "Real meetings, real relationships"},
+      {"point_title": "Local knowledge", "point_detail": "We understand your market"},
+      {"point_title": "Community commitment", "point_detail": "Living Wage employer, local suppliers"}
+    ],
+    "testimonial_note": "[Testimonial from a Dorset-based client emphasising the local relationship]",
+    "final_cta_headline": "Looking for a web agency in [Area]?",
+    "final_cta_body": "Let's talk about how we can help your business grow online. Based in Wimborne, we're just a short drive—or video call—away.",
+    "final_cta_primary_label": "Book a discovery call",
+    "final_cta_secondary_label": "Get in touch",
+    "final_cta_microcopy": "Free 30-minute consultation"
+  }
+}
