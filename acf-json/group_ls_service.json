@@ -425,26 +425,6 @@
             "rows": ""
         },
         {
-            "key": "field_ls_svc_related_case_study_note",
-            "label": "Related case study note",
-            "name": "related_case_study_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_svc_investment_heading",
             "label": "Investment heading",
             "name": "investment_heading",
@@ -624,10 +604,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770131264
+    "modified": 1770203482
 }

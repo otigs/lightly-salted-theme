@@ -5,6 +5,13 @@
       {% if menu %}
         {% include 'Partials/_menu.twig' with {'items': menu.items} only %}
       {% endif %}
+      {% if contact_details.phone_number %}
+        <div class="header-contact">
+          <a href="tel:{{ contact_details.phone_number|replace({' ': ''}) }}" class="phone-link">
+            <span>{{ contact_details.phone_number }}</span>
+          </a>
+        </div>
+      {% endif %}
     </div>
   </nav>
 </flynt-component>

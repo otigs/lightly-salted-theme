@@ -21,28 +21,18 @@
       </div>
     </section>
 
-    {% if post.meta('services_heading') or post.meta('services_note') %}
+    {% if post.meta('services_heading') %}
       <section class="section">
         <div class="container">
-          {% if post.meta('services_heading') %}
-            <h2>{{ post.meta('services_heading') }}</h2>
-          {% endif %}
-          {% if post.meta('services_note') %}
-            <p class="section-intro">{{ post.meta('services_note') }}</p>
-          {% endif %}
+          <h2>{{ post.meta('services_heading') }}</h2>
         </div>
       </section>
     {% endif %}
 
-    {% if post.meta('local_case_studies_heading') or post.meta('local_case_studies_note') %}
+    {% if post.meta('local_case_studies_heading') %}
       <section class="section section--muted">
         <div class="container">
-          {% if post.meta('local_case_studies_heading') %}
-            <h2>{{ post.meta('local_case_studies_heading') }}</h2>
-          {% endif %}
-          {% if post.meta('local_case_studies_note') %}
-            <p class="section-intro">{{ post.meta('local_case_studies_note') }}</p>
-          {% endif %}
+          <h2>{{ post.meta('local_case_studies_heading') }}</h2>
         </div>
       </section>
     {% endif %}
@@ -73,14 +63,6 @@
               {% endfor %}
             </div>
           {% endif %}
-        </div>
-      </section>
-    {% endif %}
-
-    {% if post.meta('testimonial_note') %}
-      <section class="section section--contrast">
-        <div class="container">
-          <p class="section-intro">{{ post.meta('testimonial_note') }}</p>
         </div>
       </section>
     {% endif %}
@@ -117,12 +99,5 @@
       </section>
     {% endif %}
 
-    {% if post.meta('contact_note') %}
-      <section class="section section--muted">
-        <div class="container">
-          <p class="note">{{ post.meta('contact_note') }}</p>
-        </div>
-      </section>
-    {% endif %}
   </article>
 {% endblock %}

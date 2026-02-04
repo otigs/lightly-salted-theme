@@ -63,26 +63,6 @@
             "append": ""
         },
         {
-            "key": "field_ls_aa_map_display_note",
-            "label": "Map display note",
-            "name": "map_display_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_aa_featured_areas_heading",
             "label": "Featured areas heading",
             "name": "featured_areas_heading",
@@ -232,26 +212,6 @@
             "append": ""
         },
         {
-            "key": "field_ls_aa_all_areas_note",
-            "label": "All areas note",
-            "name": "all_areas_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_aa_why_local_heading",
             "label": "Why local heading",
             "name": "why_local_heading",
@@ -355,26 +315,6 @@
                     "parent_repeater": "field_ls_aa_why_local_points"
                 }
             ]
-        },
-        {
-            "key": "field_ls_aa_testimonial_note",
-            "label": "Testimonial note",
-            "name": "testimonial_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
         },
         {
             "key": "field_ls_aa_final_cta_headline",
@@ -491,10 +431,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770131264
+    "modified": 1770203612
 }

@@ -70,22 +70,6 @@
       </section>
     {% endif %}
 
-    {% if post.meta('share_note') %}
-      <section class="section">
-        <div class="container">
-          <p class="note">{{ post.meta('share_note') }}</p>
-        </div>
-      </section>
-    {% endif %}
-
-    {% if post.meta('related_posts_note') %}
-      <section class="section">
-        <div class="container">
-          <p class="section-intro">{{ post.meta('related_posts_note') }}</p>
-        </div>
-      </section>
-    {% endif %}
-
     <section class="section">
       {{ renderComponent('GridPostsLatest', {'taxonomies': post.categories(), 'options': {'theme': 'light', 'maxColumns': 3}}) }}
     </section>

@@ -351,26 +351,6 @@
             "append": ""
         },
         {
-            "key": "field_ls_sa_featured_work_note",
-            "label": "Featured work note",
-            "name": "featured_work_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_sa_testimonial_note",
             "label": "Testimonial note",
             "name": "testimonial_note",
@@ -505,10 +485,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770131264
+    "modified": 1770203497
 }

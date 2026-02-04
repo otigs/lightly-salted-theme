@@ -3,6 +3,7 @@
 namespace Flynt\Components\SiteFooter;
 
 use Flynt\Utils\Options;
+use function get_field;
 
 Options::addGlobal('SiteFooter', [
     [
@@ -115,3 +116,23 @@ Options::addGlobal('SiteFooter', [
         ],
     ],
 ], 'Footer');
+
+add_filter('Flynt/addComponentData?name=SiteFooter', function (array $data): array {
+    if (function_exists('get_field')) {
+        $data['contact_details'] = [
+            'contact_email' => get_field('contact_email', 'option'),
+            'sales_email' => get_field('sales_email', 'option'),
+            'support_email' => get_field('support_email', 'option'),
+            'phone_number' => get_field('phone_number', 'option'),
+        ];
+    } else {
+        $data['contact_details'] = [
+            'contact_email' => null,
+            'sales_email' => null,
+            'support_email' => null,
+            'phone_number' => null,
+        ];
+    }
+
+    return $data;
+});

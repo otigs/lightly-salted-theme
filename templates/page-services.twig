@@ -97,16 +97,11 @@
     </section>
   {% endif %}
 
-  {% if post.meta('featured_work_headline') or post.meta('featured_work_note') %}
+  {% if post.meta('featured_work_headline') %}
     <section class="section section--contrast">
       <div class="container">
         <header class="section-header">
-          {% if post.meta('featured_work_headline') %}
-            <h2>{{ post.meta('featured_work_headline') }}</h2>
-          {% endif %}
-          {% if post.meta('featured_work_note') %}
-            <p class="section-intro">{{ post.meta('featured_work_note') }}</p>
-          {% endif %}
+          <h2>{{ post.meta('featured_work_headline') }}</h2>
         </header>
         {% if case_studies %}
           <div class="card-grid">
@@ -120,14 +115,6 @@
           </div>
         {% endif %}
         <p><a href="{{ case_study_link|default('/case-studies/') }}" class="button button--outlined">Explore all case studies</a></p>
-      </div>
-    </section>
-  {% endif %}
-
-  {% if post.meta('testimonial_note') %}
-    <section class="section section--muted">
-      <div class="container">
-        <p class="section-intro">{{ post.meta('testimonial_note') }}</p>
       </div>
     </section>
   {% endif %}

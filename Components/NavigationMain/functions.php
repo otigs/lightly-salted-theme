@@ -19,6 +19,11 @@ add_filter('Flynt/addComponentData?name=NavigationMain', function (array $data):
         'alt' => get_bloginfo('name')
     ];
 
+    $data['contact_details'] = [
+        'phone_number' => function_exists('get_field') ? \get_field('phone_number', 'option') : null,
+        'contact_email' => function_exists('get_field') ? \get_field('contact_email', 'option') : null,
+    ];
+
     return $data;
 });
 

@@ -63,26 +63,6 @@
             "append": ""
         },
         {
-            "key": "field_ls_ba_featured_post_note",
-            "label": "Featured post note",
-            "name": "featured_post_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_ba_topic_nav_headline",
             "label": "Topic navigation headline",
             "name": "topic_nav_headline",
@@ -385,10 +365,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770131264
+    "modified": 1770203557
 }

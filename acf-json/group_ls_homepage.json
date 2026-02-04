@@ -173,26 +173,6 @@
             "append": ""
         },
         {
-            "key": "field_ls_hp_video_testimonials_note",
-            "label": "Video testimonials note",
-            "name": "video_testimonials_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_hp_services_headline",
             "label": "Services headline",
             "name": "services_headline",
@@ -233,87 +213,33 @@
             "rows": ""
         },
         {
-            "key": "field_ls_hp_service_cards",
-            "label": "Service cards",
-            "name": "service_cards",
+            "key": "field_69830c8634537",
+            "label": "Services",
+            "name": "services",
             "aria-label": "",
-            "type": "repeater",
+            "type": "post_object",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "min": 0,
-            "max": 0,
-            "rows_per_page": 20,
-            "layout": "table",
-            "button_label": "Add Row",
-            "collapsed": "",
-            "sub_fields": [
-                {
-                    "key": "field_ls_hp_sc_name",
-                    "label": "Service name",
-                    "name": "service_name",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_ls_hp_service_cards"
-                },
-                {
-                    "key": "field_ls_hp_sc_summary",
-                    "label": "Service summary",
-                    "name": "service_summary",
-                    "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "new_lines": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "rows": "",
-                    "parent_repeater": "field_ls_hp_service_cards"
-                },
-                {
-                    "key": "field_ls_hp_sc_url",
-                    "label": "Service URL",
-                    "name": "service_url",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_ls_hp_service_cards"
-                }
-            ]
+            "post_type": [
+                "service"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
             "key": "field_ls_hp_services_cta_label",
@@ -376,24 +302,33 @@
             "rows": ""
         },
         {
-            "key": "field_ls_hp_featured_work_note",
-            "label": "Featured work note",
-            "name": "featured_work_note",
+            "key": "field_6983159c88a73",
+            "label": "Featured work",
+            "name": "featured_work",
             "aria-label": "",
-            "type": "textarea",
+            "type": "post_object",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
+            "post_type": [
+                "case_study"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
             "key": "field_ls_hp_featured_work_cta_label",
@@ -581,26 +516,6 @@
             "rows": ""
         },
         {
-            "key": "field_ls_hp_blog_preview_note",
-            "label": "Blog preview note",
-            "name": "blog_preview_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_hp_blog_preview_cta_label",
             "label": "Blog preview CTA label",
             "name": "blog_preview_cta_label",
@@ -661,24 +576,33 @@
             "rows": ""
         },
         {
-            "key": "field_ls_hp_areas_note",
-            "label": "Areas note",
-            "name": "areas_note",
+            "key": "field_6983108bdbbe3",
+            "label": "Areas",
+            "name": "areas",
             "aria-label": "",
-            "type": "textarea",
+            "type": "post_object",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
+            "post_type": [
+                "area"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
             "key": "field_ls_hp_areas_cta_label",
@@ -815,10 +739,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770131264
+    "modified": 1770203468
 }

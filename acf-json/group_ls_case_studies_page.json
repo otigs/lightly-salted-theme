@@ -191,46 +191,6 @@
             ]
         },
         {
-            "key": "field_ls_csa_featured_case_study_note",
-            "label": "Featured case study note",
-            "name": "featured_case_study_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
-            "key": "field_ls_csa_case_study_grid_note",
-            "label": "Case study grid note",
-            "name": "case_study_grid_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
-        },
-        {
             "key": "field_ls_csa_results_summary_headline",
             "label": "Results summary headline",
             "name": "results_summary_headline",
@@ -314,26 +274,6 @@
                     "parent_repeater": "field_ls_csa_results_summary_metrics"
                 }
             ]
-        },
-        {
-            "key": "field_ls_csa_testimonial_strip_note",
-            "label": "Testimonial strip note",
-            "name": "testimonial_strip_note",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": ""
         },
         {
             "key": "field_ls_csa_final_cta_headline",
@@ -430,10 +370,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770131264
+    "modified": 1770203537
 }

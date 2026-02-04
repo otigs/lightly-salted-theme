@@ -48,23 +48,18 @@
     </section>
   {% endif %}
 
-  {% if post.meta('video_testimonials_headline') or post.meta('video_testimonials_note') %}
+  {% if post.meta('video_testimonials_headline') %}
     <section class="section section--muted">
       <div class="container">
         <header class="section-header">
-          {% if post.meta('video_testimonials_headline') %}
-            <h2>{{ post.meta('video_testimonials_headline') }}</h2>
-          {% endif %}
-          {% if post.meta('video_testimonials_note') %}
-            <p class="section-intro">{{ post.meta('video_testimonials_note') }}</p>
-          {% endif %}
+          <h2>{{ post.meta('video_testimonials_headline') }}</h2>
         </header>
       </div>
     </section>
   {% endif %}
 
-  {% if post.meta('services_headline') or post.meta('service_cards') %}
-    <section id="services" class="services section">
+  {% if post.meta('services_headline') or post.meta('services') %}
+    <section id="services" class="services">
       <div class="container">
         <header class="section-header">
           {% if post.meta('services_headline') %}
@@ -74,19 +69,25 @@
             <p class="section-intro">{{ post.meta('services_intro') }}</p>
           {% endif %}
         </header>
-        {% if post.meta('service_cards') %}
-          <div class="card-grid">
-            {% for card in post.meta('service_cards') %}
-              <article class="card">
-                {% if card.service_name %}
-                  <h3 class="card__title">{{ card.service_name }}</h3>
+        {% set related_services = post.meta('services') %}
+        {% if related_services %}
+          <div class="services-grid">
+            {% for service in related_services %}
+              <article class="service-card">
+                {% if service.meta('service_icon') %}
+                  <div class="service-icon">
+                    <img src="{{ function('wp_get_attachment_image_url', service.meta('service_icon'), 'full') }}" alt="" width="80" height="80">
+                  </div>
                 {% endif %}
-                {% if card.service_summary %}
-                  <p class="card__meta">{{ card.service_summary }}</p>
+                <h3>{{ service.title }}</h3>
+                {% if service.meta('service_summary') %}
+                  <p>{{ service.meta('service_summary') }}</p>
+                {% else %}
+                  <p>{{ service.excerpt.read_more(false) }}</p>
                 {% endif %}
-                {% if card.service_url %}
-                  <a href="{{ card.service_url }}" class="button button--text">Learn more</a>
-                {% endif %}
+                <a href="{{ service.link|e('esc_url') }}" class="service-link">
+                  {{ post.meta('services_cta_label')|default('Learn more →') }}
+                </a>
               </article>
             {% endfor %}
           </div>
@@ -112,21 +113,62 @@
           {% endif %}
         </header>
         {% if case_studies %}
-          <div class="card-grid">
-            {% for case in case_studies %}
-              <article class="card">
-                <h3 class="card__title">{{ case.title }}</h3>
-                <p class="card__meta">{{ case.excerpt.read_more(false) }}</p>
-                <a class="button button--text" href="{{ case.link|e('esc_url') }}">View case study</a>
-              </article>
-            {% endfor %}
+          {% set featured = featured_case_study ?? (case_studies|first) %}
+          {% set testimonial = featured.meta('testimonial') %}
+          {% set testimonial_quote = testimonial.quote ?? featured.meta('testimonial_quote') %}
+          {% set testimonial_name = testimonial.name ?? featured.meta('testimonial_name') %}
+          {% set testimonial_role_company = testimonial.role_company ?? featured.meta('testimonial_role_company') %}
+
+          <div class="case-study-inner">
+            <div class="case-study-content">
+              <p class="section-eyebrow">Featured project</p>
+              <h2>{{ featured.meta('project_headline')|default(featured.title) }}</h2>
+
+              {% if testimonial_quote %}
+                <blockquote>
+                  <p>{{ testimonial_quote }}</p>
+                  <footer>
+                    <cite>
+                      {% if testimonial_name %}
+                        <strong>{{ testimonial_name }}</strong>
+                      {% endif %}
+                      {% if testimonial_role_company %}
+                        <span>{{ testimonial_role_company }}</span>
+                      {% elseif featured.meta('client_name') %}
+                        <span>{{ featured.meta('client_name') }}</span>
+                      {% endif %}
+                    </cite>
+                  </footer>
+                </blockquote>
+              {% endif %}
+
+              <a href="{{ featured.link|e('esc_url') }}" class="btn btn-secondary">View case study →</a>
+            </div>
+
+            <div class="case-study-visual">
+              {% if featured.meta('hero_image') %}
+                <img src="{{ function('wp_get_attachment_image_url', featured.meta('hero_image'), 'large') }}" alt="{{ featured.meta('client_name')|default(featured.title) }}">
+              {% elseif featured.thumbnail %}
+                <img src="{{ featured.thumbnail.src|e }}" alt="{{ featured.thumbnail.alt|e ?: featured.title }}">
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="client-logos">
+            <p class="client-logos-label">
+              Trusted by purpose-driven organisations
+            </p>
+            <div class="logo-grid">
+              {% for cs in case_studies|slice(0, 4) %}
+                <div class="client-logo" aria-label="{{ cs.meta('client_name')|default(cs.title) }}">
+                  {{ cs.meta('client_name')|default(cs.title) }}
+                </div>
+              {% endfor %}
+            </div>
           </div>
         {% endif %}
-        {% if post.meta('featured_work_note') %}
-          <p class="note">{{ post.meta('featured_work_note') }}</p>
-        {% endif %}
         {% if post.meta('featured_work_cta_label') %}
-          <p>
+          <p class="section-intro">
             <a href="{{ case_study_link|default('/case-studies/') }}" class="button">{{ post.meta('featured_work_cta_label') }}</a>
           </p>
         {% endif %}
@@ -135,7 +177,7 @@
   {% endif %}
 
   {% if post.meta('differentiators_headline') or post.meta('differentiators') %}
-    <section class="section">
+    <section id="about" class="values">
       <div class="container">
         <header class="section-header section-header--center">
           {% if post.meta('differentiators_headline') %}
@@ -143,31 +185,43 @@
           {% endif %}
         </header>
         {% if post.meta('differentiators') %}
-          <div class="card-grid">
+          <div class="values-grid">
             {% for diff in post.meta('differentiators') %}
-              <article class="card">
-                <h3 class="card__title">{{ diff.diff_title }}</h3>
+              <article class="value-card{{ loop.index == 2 ? ' value-card--accent' }}">
+                <h3>{{ diff.diff_title }}</h3>
                 {% if diff.diff_body %}
-                  <p class="card__meta">{{ diff.diff_body }}</p>
+                  <p>{{ diff.diff_body }}</p>
                 {% endif %}
               </article>
             {% endfor %}
+          </div>
+          <div class="methodology">
+            <h3>How we work</h3>
+            <div class="methodology-items">
+              <div class="methodology-item">
+                <span class="methodology-label">Custom WordPress</span>
+                <span class="methodology-detail">Bespoke designs, never templates</span>
+              </div>
+              <div class="methodology-item">
+                <span class="methodology-label">UK Cloud Hosting</span>
+                <span class="methodology-detail">Fast, secure, 100% renewable</span>
+              </div>
+              <div class="methodology-item">
+                <span class="methodology-label">Ongoing Partnership</span>
+                <span class="methodology-detail">Support that grows with you</span>
+              </div>
+            </div>
           </div>
         {% endif %}
       </div>
     </section>
   {% endif %}
 
-  {% if post.meta('testimonials_headline') or post.meta('testimonials_note') %}
+  {% if post.meta('testimonials_headline') %}
     <section class="section section--muted">
       <div class="container">
         <header class="section-header section-header--center">
-          {% if post.meta('testimonials_headline') %}
-            <h2>{{ post.meta('testimonials_headline') }}</h2>
-          {% endif %}
-          {% if post.meta('testimonials_note') %}
-            <p class="section-intro">{{ post.meta('testimonials_note') }}</p>
-          {% endif %}
+          <h2>{{ post.meta('testimonials_headline') }}</h2>
         </header>
       </div>
     </section>
@@ -186,63 +240,43 @@
         </header>
       </div>
       {{ renderComponent('GridPostsLatest', {'options': {'theme': 'light', 'maxPosts': 3, 'maxColumns': 3}}) }}
-      {% if post.meta('blog_preview_note') or post.meta('blog_preview_cta_label') %}
+      {% if post.meta('blog_preview_cta_label') %}
         <div class="container">
-          {% if post.meta('blog_preview_note') %}
-            <p class="note">{{ post.meta('blog_preview_note') }}</p>
-          {% endif %}
-          {% if post.meta('blog_preview_cta_label') %}
-            <p><a href="{{ blog_link|default('/blog/') }}" class="button button--outlined">{{ post.meta('blog_preview_cta_label') }}</a></p>
-          {% endif %}
+          <p><a href="{{ blog_link|default('/blog/') }}" class="button button--outlined">{{ post.meta('blog_preview_cta_label') }}</a></p>
         </div>
       {% endif %}
     </section>
   {% endif %}
 
-  {% if post.meta('areas_headline') or post.meta('areas_body') %}
+  {% if post.meta('areas_headline') or post.meta('areas') %}
     <section class="section section--contrast">
       <div class="container">
         <header class="section-header">
           {% if post.meta('areas_headline') %}
             <h2>{{ post.meta('areas_headline') }}</h2>
           {% endif %}
-          {% if post.meta('areas_body') %}
-            <p class="section-intro">{{ post.meta('areas_body') }}</p>
-          {% endif %}
         </header>
-        {% if post.meta('areas_note') %}
-          <p class="note">{{ post.meta('areas_note') }}</p>
-        {% endif %}
-        {% if post.meta('areas_cta_label') %}
-          <a href="{{ areas_link }}" class="button button--outlined">{{ post.meta('areas_cta_label') }}</a>
+        {% set areas = post.meta('areas') %}
+        {% if areas %}
+          <div class="card-grid">
+            {% for area in areas %}
+              <article class="card">
+                <h3 class="card__title">{{ area.title }}</h3>
+                {% if area.excerpt %}
+                  <p class="card__meta">{{ area.excerpt.read_more(false) }}</p>
+                {% endif %}
+                <a href="{{ area.link|e('esc_url') }}" class="button button--text">
+                  {{ post.meta('areas_cta_label')|default('Find your area') }}
+                </a>
+              </article>
+            {% endfor %}
+          </div>
         {% endif %}
       </div>
     </section>
   {% endif %}
 
   {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="cta-panel">
-          {% if post.meta('final_cta_headline') %}
-            <h2>{{ post.meta('final_cta_headline') }}</h2>
-          {% endif %}
-          {% if post.meta('final_cta_body') %}
-            <p>{{ post.meta('final_cta_body') }}</p>
-          {% endif %}
-          <div class="hero-ctas">
-            {% if post.meta('final_cta_primary_label') %}
-              <a href="#contact" class="button">{{ post.meta('final_cta_primary_label') }}</a>
-            {% endif %}
-            {% if post.meta('final_cta_secondary_label') %}
-              <a href="{{ site.link }}/contact/" class="button button--outlined">{{ post.meta('final_cta_secondary_label') }}</a>
-            {% endif %}
-          </div>
-          {% if post.meta('final_cta_microcopy') %}
-            <p class="cta-panel__microcopy">{{ post.meta('final_cta_microcopy') }}</p>
-          {% endif %}
-        </div>
-      </div>
-    </section>
+    {{ renderComponent('ContactSection') }}
   {% endif %}
 {% endblock %}

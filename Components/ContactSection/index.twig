@@ -1,0 +1,67 @@
+<flynt-component name="ContactSection">
+  {% set phone = contact_details.phone_number ?? (function('get_field', 'phone_number', 'option')) %}
+  {% set contact_email = contact_details.contact_email ?? (function('get_field', 'contact_email', 'option')) %}
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-content">
+          <p class="section-eyebrow">Get in touch</p>
+          {% if post.meta('final_cta_headline') %}
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('final_cta_body') %}
+            <p>{{ post.meta('final_cta_body') }}</p>
+          {% endif %}
+
+          <div class="contact-methods">
+            <a href="{{ phone ? 'tel:' ~ phone|replace({' ': ''}) : '#' }}" class="contact-method contact-method--phone">
+              <span>
+                <strong>Call us</strong>
+                {{ phone|default('Phone number coming soon') }}
+              </span>
+            </a>
+            <a href="{{ contact_email ? 'mailto:' ~ contact_email : '#' }}" class="contact-method">
+              <span>
+                <strong>Email us</strong>
+                {{ contact_email|default('Contact email coming soon') }}
+              </span>
+            </a>
+          </div>
+
+          <div class="contact-trust">
+            <p>
+              <strong>No spam, no pressure.</strong>
+              {{ post.meta('final_cta_microcopy')|default("Just a friendly conversation about how we might help.") }}
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="contact-name">Your name</label>
+              <input type="text" id="contact-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email address</label>
+              <input type="email" id="contact-email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Tell us about your project</label>
+              <textarea id="contact-message" name="message" rows="4" placeholder="What are you looking to achieve?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              {{ post.meta('final_cta_primary_label')|default('Send message') }}
+            </button>
+          </form>
+          <div class="form-badges">
+            <span class="badge">Good Business Charter</span>
+            <span class="badge">Ecologi Climate Positive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</flynt-component>
+

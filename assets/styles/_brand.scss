@@ -250,6 +250,11 @@ section {
   margin-inline: auto;
 }
 
+.section-header h2 {
+  color: var(--ink-900);
+  font-size: clamp(1.375rem, 1.5vw + 1.1rem, 1.75rem);
+}
+
 .section-eyebrow {
   font-family: var(--font-heading);
   font-size: 0.875rem;
@@ -270,8 +275,13 @@ section {
   PAGE SECTIONS & CARDS
   -------------------------------------------- */
 .page-hero {
-  background-color: var(--color-background);
+  background-color: var(--color-surface);
   padding-block: var(--space-3xl) var(--space-4xl);
+}
+
+.page-hero .hero-content h1 {
+  max-width: var(--container-narrow);
+  line-height: 1.2;
 }
 
 .page-hero__breadcrumbs {
@@ -341,6 +351,73 @@ details.card summary::-webkit-details-marker {
   transform: translateY(-2px);
 }
 
+/* Card with featured image (e.g. case studies on homepage) */
+.card--media {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card--media .card__link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card--media .card__link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card--media .card__link:hover .button--text {
+  color: var(--link-hover);
+}
+
+.card__figure {
+  margin: 0;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.card__figure:first-child {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card--media .card__body {
+  padding: var(--space-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card--media .card__body .card__meta {
+  flex: 1;
+}
+
+.section--contrast .card {
+  border-top: 3px solid var(--color-accent);
+}
+
+.section--contrast .card--media {
+  border-top-width: 0;
+}
+
+.section--contrast .card--media .card__body {
+  border-top: 3px solid var(--color-accent);
+}
+
 .card__title {
   font-family: var(--font-heading);
   font-size: 1.125rem;
@@ -350,6 +427,10 @@ details.card summary::-webkit-details-marker {
 .card__meta {
   color: var(--text-secondary);
   font-size: var(--font-size-small);
+}
+
+.card .button--text:hover {
+  color: var(--link-hover);
 }
 
 .pill {
@@ -441,8 +522,40 @@ details.card summary::-webkit-details-marker {
   background-color: var(--ink-900);
   border-radius: var(--radius-lg);
   color: var(--white);
-  padding: var(--space-2xl);
+  padding: var(--space-3xl) var(--space-2xl);
   text-align: center;
+}
+
+.cta-panel .hero-ctas {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-panel .button:not(.button--outlined),
+.cta-panel .btn:not(.btn-secondary) {
+  background-color: var(--white);
+  color: var(--blue-700);
+  border-color: var(--white);
+}
+
+.cta-panel .button:not(.button--outlined):hover,
+.cta-panel .btn:not(.btn-secondary):hover {
+  background-color: var(--surface-50);
+  border-color: var(--surface-50);
+  color: var(--ink-900);
+}
+
+.cta-panel .button--outlined,
+.cta-panel .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: var(--white);
+}
+
+.cta-panel .button--outlined:hover,
+.cta-panel .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+  color: var(--white);
 }
 
 .cta-panel .button,
@@ -461,6 +574,10 @@ details.card summary::-webkit-details-marker {
    -------------------------------------------- */
 .services {
   background-color: var(--surface-50);
+}
+
+.services.section {
+  background-color: var(--color-background);
 }
 
 .services-grid {

@@ -13,9 +13,6 @@
         {% if post.meta('hero_intro') %}
           <p class="lede">{{ post.meta('hero_intro') }}</p>
         {% endif %}
-        {% if post.meta('alternative_titles') %}
-          <p class="note">{{ post.meta('alternative_titles') }}</p>
-        {% endif %}
       </div>
     </div>
   </section>
@@ -38,19 +35,8 @@
     </section>
   {% endif %}
 
-  {% if post.meta('featured_case_study_note') %}
-    <section class="section">
-      <div class="container">
-        <p class="section-intro">{{ post.meta('featured_case_study_note') }}</p>
-      </div>
-    </section>
-  {% endif %}
-
   <section class="section section--contrast">
     <div class="container">
-      {% if post.meta('case_study_grid_note') %}
-        <p class="section-intro">{{ post.meta('case_study_grid_note') }}</p>
-      {% endif %}
       {% if case_studies %}
         <div class="card-grid">
           {% for case in case_studies %}
@@ -84,14 +70,6 @@
             {% endfor %}
           </div>
         {% endif %}
-      </div>
-    </section>
-  {% endif %}
-
-  {% if post.meta('testimonial_strip_note') %}
-    <section class="section section--muted">
-      <div class="container">
-        <p class="section-intro">{{ post.meta('testimonial_strip_note') }}</p>
       </div>
     </section>
   {% endif %}

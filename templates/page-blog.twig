@@ -17,14 +17,6 @@
     </div>
   </section>
 
-  {% if post.meta('featured_post_note') %}
-    <section class="section section--muted">
-      <div class="container">
-        <p class="section-intro">{{ post.meta('featured_post_note') }}</p>
-      </div>
-    </section>
-  {% endif %}
-
   {% if post.meta('topic_nav_headline') or post.meta('topic_cards') %}
     <section class="section">
       <div class="container">
@@ -54,9 +46,6 @@
 
   <section class="section section--contrast" {{ post.meta('pagination_mode') ? 'data-pagination-mode="' ~ post.meta('pagination_mode') ~ '"' }}>
     <div class="container">
-      {% if post.meta('post_listing_note') %}
-        <p class="section-intro">{{ post.meta('post_listing_note') }}</p>
-      {% endif %}
       {% if posts %}
         <div class="card-grid">
           {% for entry in posts %}

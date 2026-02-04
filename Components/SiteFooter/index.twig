@@ -44,6 +44,37 @@
                 {% endif %}
                 {% if group.contact_address %}
                   <address>{{ group.contact_address|raw }}</address>
+                {% elseif group.heading == 'Contact' and contact_details is defined %}
+                  <address>
+                    {% if contact_details.phone_number %}
+                      <p>
+                        <a href="tel:{{ contact_details.phone_number|replace({' ': ''}) }}">
+                          {{ contact_details.phone_number }}
+                        </a>
+                      </p>
+                    {% endif %}
+                    {% if contact_details.contact_email %}
+                      <p>
+                        <a href="mailto:{{
+                          contact_details.contact_email
+                        }}">{{ contact_details.contact_email }}</a>
+                      </p>
+                    {% endif %}
+                    {% if contact_details.sales_email %}
+                      <p>
+                        <a href="mailto:{{
+                          contact_details.sales_email
+                        }}">{{ contact_details.sales_email }}</a>
+                      </p>
+                    {% endif %}
+                    {% if contact_details.support_email %}
+                      <p>
+                        <a href="mailto:{{
+                          contact_details.support_email
+                        }}">{{ contact_details.support_email }}</a>
+                      </p>
+                    {% endif %}
+                  </address>
                 {% endif %}
               </div>
             {% endfor %}
