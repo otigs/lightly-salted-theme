@@ -1,0 +1,109 @@
+# Area
+- Field Group Key: `group_ls_area`
+## Fields
+- **Area name** (`field_ls_ar_area_name`)
+  - Name: `area_name`
+  - Type: `text`
+  - Value: "Poole"
+- **Hero title** (`field_ls_ar_hero_title`)
+  - Name: `hero_title`
+  - Type: `text`
+  - Value: "Web Design in Poole"
+- **Hero introduction** (`field_ls_ar_hero_intro`)
+  - Name: `hero_intro`
+  - Type: `textarea`
+  - Value: "Helping Poole businesses grow with bespoke, eco-friendly digital solutions. We are Lightly Salted, your local digital growth partner."
+- **Primary CTA label** (`field_ls_ar_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: "Get a quote"
+- **Secondary CTA label** (`field_ls_ar_secondary_cta_label`)
+  - Name: `secondary_cta_label`
+  - Type: `text`
+  - Value: "See our work"
+- **Services heading** (`field_ls_ar_services_heading`)
+  - Name: `services_heading`
+  - Type: `text`
+  - Value: "Expert Services for Poole"
+- **Services note** (`field_ls_ar_services_note`)
+  - Name: `services_note`
+  - Type: `textarea`
+  - Value: "We offer tailored web design, strategic development, and reliable hosting to support the diverse commercial sectors in Poole."
+- **Local case studies heading** (`field_ls_ar_local_case_studies_heading`)
+  - Name: `local_case_studies_heading`
+  - Type: `text`
+  - Value: "Our Work"
+- **Local case studies note** (`field_ls_ar_local_case_studies_note`)
+  - Name: `local_case_studies_note`
+  - Type: `textarea`
+  - Value: "We've helped businesses like Monroe Brothers Ltd achieve excellent results."
+- **Local agency heading** (`field_ls_ar_local_agency_heading`)
+  - Name: `local_agency_heading`
+  - Type: `text`
+  - Value: "Committed to the Community"
+- **Local agency body** (`field_ls_ar_local_agency_body`)
+  - Name: `local_agency_body`
+  - Type: `wysiwyg`
+  - Value: "<p>We aren't just a faceless agency. We are committed to ethical business practices and reducing poverty in our region. When you work with us, you work with a team that cares about the local community and the planet.</p>"
+- **Local agency benefits** (`field_ls_ar_local_agency_benefits`)
+  - Name: `local_agency_benefits`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Benefit title** (`field_ls_ar_ab_title`)
+      - Name: `benefit_title`
+      - Type: `text`
+      - Value: "Honesty & Integrity"
+    - **Benefit detail** (`field_ls_ar_ab_detail`)
+      - Name: `benefit_detail`
+      - Type: `textarea`
+      - Value: "We never mislead or exploit clients; our values are our differentiator."
+    - **Benefit title** (`field_ls_ar_ab_title`)
+      - Name: `benefit_title`
+      - Type: `text`
+      - Value: "Technical Excellence"
+    - **Benefit detail** (`field_ls_ar_ab_detail`)
+      - Name: `benefit_detail`
+      - Type: `textarea`
+      - Value: "High-performance websites built to last."
+- **Testimonial note** (`field_ls_ar_testimonial_note`)
+  - Name: `testimonial_note`
+  - Type: `textarea`
+  - Value: "'The outcome is a good result' - Monroe Brothers Ltd."
+- **Nearby areas heading** (`field_ls_ar_nearby_areas_heading`)
+  - Name: `nearby_areas_heading`
+  - Type: `text`
+  - Value: "Serving nearby locations"
+- **Nearby areas** (`field_ls_ar_nearby_areas`)
+  - Name: `nearby_areas`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Nearby area name** (`field_ls_ar_na_name`)
+      - Name: `nearby_area_name`
+      - Type: `text`
+      - Value: "Bournemouth"
+    - **Nearby area URL** (`field_ls_ar_na_url`)
+      - Name: `nearby_area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-bournemouth/"
+    - **Nearby area name** (`field_ls_ar_na_name`)
+      - Name: `nearby_area_name`
+      - Type: `text`
+      - Value: "Wimborne"
+    - **Nearby area URL** (`field_ls_ar_na_url`)
+      - Name: `nearby_area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-wimborne/"
+- **Final CTA headline** (`field_ls_ar_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Grow your business in Poole"
+- **Final CTA body** (`field_ls_ar_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Contact us today for a website that supports your goals and values."
+- **Contact note** (`field_ls_ar_contact_note`)
+  - Name: `contact_note`
+  - Type: `textarea`
+  - Value: "We'd love to hear from you."

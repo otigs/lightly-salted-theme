@@ -1,0 +1,109 @@
+# Area
+- Field Group Key: `group_ls_area`
+## Fields
+- **Area name** (`field_ls_ar_area_name`)
+  - Name: `area_name`
+  - Type: `text`
+  - Value: "Bournemouth"
+- **Hero title** (`field_ls_ar_hero_title`)
+  - Name: `hero_title`
+  - Type: `text`
+  - Value: "Web Design in Bournemouth"
+- **Hero introduction** (`field_ls_ar_hero_intro`)
+  - Name: `hero_intro`
+  - Type: `textarea`
+  - Value: "We are Lightly Salted, a digital growth partner serving businesses in Bournemouth. We create bespoke, sustainable websites that help coastal businesses thrive in a digital world."
+- **Primary CTA label** (`field_ls_ar_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: "Start your project"
+- **Secondary CTA label** (`field_ls_ar_secondary_cta_label`)
+  - Name: `secondary_cta_label`
+  - Type: `text`
+  - Value: "Our services"
+- **Services heading** (`field_ls_ar_services_heading`)
+  - Name: `services_heading`
+  - Type: `text`
+  - Value: "Digital Services for Bournemouth Businesses"
+- **Services note** (`field_ls_ar_services_note`)
+  - Name: `services_note`
+  - Type: `textarea`
+  - Value: "From hospitality to professional services, we offer high-performance hosting, maintenance, and bespoke web design tailored to the Bournemouth market."
+- **Local case studies heading** (`field_ls_ar_local_case_studies_heading`)
+  - Name: `local_case_studies_heading`
+  - Type: `text`
+  - Value: "Local Success Stories"
+- **Local case studies note** (`field_ls_ar_local_case_studies_note`)
+  - Name: `local_case_studies_note`
+  - Type: `textarea`
+  - Value: "See how we've helped businesses in the South of England grow."
+- **Local agency heading** (`field_ls_ar_local_agency_heading`)
+  - Name: `local_agency_heading`
+  - Type: `text`
+  - Value: "Your Local Digital Partner"
+- **Local agency body** (`field_ls_ar_local_agency_body`)
+  - Name: `local_agency_body`
+  - Type: `wysiwyg`
+  - Value: "<p>Bournemouth is a hub of innovation and commerce. We provide the technical expertise you need to stand out, combined with the personal touch of a local partner. We believe in face-to-face collaboration and building long-term relationships.</p>"
+- **Local agency benefits** (`field_ls_ar_local_agency_benefits`)
+  - Name: `local_agency_benefits`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Benefit title** (`field_ls_ar_ab_title`)
+      - Name: `benefit_title`
+      - Type: `text`
+      - Value: "Accessible Support"
+    - **Benefit detail** (`field_ls_ar_ab_detail`)
+      - Name: `benefit_detail`
+      - Type: `textarea`
+      - Value: "We are just down the road for meetings and support."
+    - **Benefit title** (`field_ls_ar_ab_title`)
+      - Name: `benefit_title`
+      - Type: `text`
+      - Value: "Eco-Conscious"
+    - **Benefit detail** (`field_ls_ar_ab_detail`)
+      - Name: `benefit_detail`
+      - Type: `textarea`
+      - Value: "We help Bournemouth businesses lower their carbon footprint with 100% renewable hosting."
+- **Testimonial note** (`field_ls_ar_testimonial_note`)
+  - Name: `testimonial_note`
+  - Type: `textarea`
+  - Value: "Clients appreciate our 'good advice' and 'pro-active' approach."
+- **Nearby areas heading** (`field_ls_ar_nearby_areas_heading`)
+  - Name: `nearby_areas_heading`
+  - Type: `text`
+  - Value: "Also covering"
+- **Nearby areas** (`field_ls_ar_nearby_areas`)
+  - Name: `nearby_areas`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Nearby area name** (`field_ls_ar_na_name`)
+      - Name: `nearby_area_name`
+      - Type: `text`
+      - Value: "Poole"
+    - **Nearby area URL** (`field_ls_ar_na_url`)
+      - Name: `nearby_area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-poole/"
+    - **Nearby area name** (`field_ls_ar_na_name`)
+      - Name: `nearby_area_name`
+      - Type: `text`
+      - Value: "Wimborne"
+    - **Nearby area URL** (`field_ls_ar_na_url`)
+      - Name: `nearby_area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-wimborne/"
+- **Final CTA headline** (`field_ls_ar_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Let's work together"
+- **Final CTA body** (`field_ls_ar_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Ready to upgrade your website? Contact your local Bournemouth web design experts."
+- **Contact note** (`field_ls_ar_contact_note`)
+  - Name: `contact_note`
+  - Type: `textarea`
+  - Value: "We are available for calls or coffee."

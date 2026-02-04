@@ -1,0 +1,137 @@
+# Areas Covered Page
+- Field Group Key: `group_ls_areas_covered_page`
+## Fields
+- **Hero title** (`field_ls_aa_hero_title`)
+  - Name: `hero_title`
+  - Type: `text`
+  - Value: "Serving the South of England"
+- **Hero introduction** (`field_ls_aa_hero_intro`)
+  - Name: `hero_intro`
+  - Type: `textarea`
+  - Value: "While we work digitally with clients everywhere, our heart is in Dorset. We provide expert web design and digital growth support to businesses across Bournemouth, Poole, and Wimborne."
+- **Breadcrumb label** (`field_ls_aa_breadcrumb_label`)
+  - Name: `breadcrumb_label`
+  - Type: `text`
+  - Value: "Areas"
+- **Map display note** (`field_ls_aa_map_display_note`)
+  - Name: `map_display_note`
+  - Type: `textarea`
+  - Value: "We are based in Wimborne, Dorset, and serve the surrounding coastal and rural areas."
+- **Featured areas heading** (`field_ls_aa_featured_areas_heading`)
+  - Name: `featured_areas_heading`
+  - Type: `text`
+  - Value: "Local expertise"
+- **Featured areas** (`field_ls_aa_featured_areas`)
+  - Name: `featured_areas`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Area name** (`field_ls_aa_fa_name`)
+      - Name: `area_name`
+      - Type: `text`
+      - Value: "Bournemouth"
+    - **Area descriptor** (`field_ls_aa_fa_descriptor`)
+      - Name: `area_descriptor`
+      - Type: `text`
+      - Value: "Digital solutions for a vibrant coastal business hub."
+    - **Area image** (`field_ls_aa_fa_image`)
+      - Name: `area_image`
+      - Type: `image`
+      - Value: ""
+    - **Area URL** (`field_ls_aa_fa_url`)
+      - Name: `area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-bournemouth/"
+    - **Area name** (`field_ls_aa_fa_name`)
+      - Name: `area_name`
+      - Type: `text`
+      - Value: "Poole"
+    - **Area descriptor** (`field_ls_aa_fa_descriptor`)
+      - Name: `area_descriptor`
+      - Type: `text`
+      - Value: "Supporting commercial growth in Dorset's largest town."
+    - **Area image** (`field_ls_aa_fa_image`)
+      - Name: `area_image`
+      - Type: `image`
+      - Value: ""
+    - **Area URL** (`field_ls_aa_fa_url`)
+      - Name: `area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-poole/"
+    - **Area name** (`field_ls_aa_fa_name`)
+      - Name: `area_name`
+      - Type: `text`
+      - Value: "Wimborne"
+    - **Area descriptor** (`field_ls_aa_fa_descriptor`)
+      - Name: `area_descriptor`
+      - Type: `text`
+      - Value: "Our home town. Local service with personal care."
+    - **Area image** (`field_ls_aa_fa_image`)
+      - Name: `area_image`
+      - Type: `image`
+      - Value: ""
+    - **Area URL** (`field_ls_aa_fa_url`)
+      - Name: `area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-wimborne/"
+- **All areas heading** (`field_ls_aa_all_areas_heading`)
+  - Name: `all_areas_heading`
+  - Type: `text`
+  - Value: "Serving the region"
+- **All areas note** (`field_ls_aa_all_areas_note`)
+  - Name: `all_areas_note`
+  - Type: `textarea`
+  - Value: "We frequently work with clients across the South of England."
+- **Why local heading** (`field_ls_aa_why_local_heading`)
+  - Name: `why_local_heading`
+  - Type: `text`
+  - Value: "Why choose a local agency?"
+- **Why local body** (`field_ls_aa_why_local_body`)
+  - Name: `why_local_body`
+  - Type: `wysiwyg`
+  - Value: "<p>Choosing a local partner means you get a team that understands the local market. We believe in building relationships through face-to-face interaction and shared values. As a Living Wage employer contributing to the Wimborne community, we are invested in the region's success.</p>"
+- **Why local points** (`field_ls_aa_why_local_points`)
+  - Name: `why_local_points`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Point title** (`field_ls_aa_wlp_title`)
+      - Name: `point_title`
+      - Type: `text`
+      - Value: "Personal Connection"
+    - **Point detail** (`field_ls_aa_wlp_detail`)
+      - Name: `point_detail`
+      - Type: `textarea`
+      - Value: "We value authentic, friendly communication. Being local allows for better collaboration."
+    - **Point title** (`field_ls_aa_wlp_title`)
+      - Name: `point_title`
+      - Type: `text`
+      - Value: "Community Impact"
+    - **Point detail** (`field_ls_aa_wlp_detail`)
+      - Name: `point_detail`
+      - Type: `textarea`
+      - Value: "We are committed to reducing poverty and supporting good business practices in our area."
+- **Testimonial note** (`field_ls_aa_testimonial_note`)
+  - Name: `testimonial_note`
+  - Type: `textarea`
+  - Value: "Local businesses trust us to deliver. 'Thoroughly recommend' says Caplor Energy."
+- **Final CTA headline** (`field_ls_aa_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Let's meet up"
+- **Final CTA body** (`field_ls_aa_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Based in Dorset? Let's discuss your project over a coffee."
+- **Final CTA primary label** (`field_ls_aa_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: "Contact us"
+- **Final CTA secondary label** (`field_ls_aa_final_cta_secondary_label`)
+  - Name: `final_cta_secondary_label`
+  - Type: `text`
+  - Value: "View work"
+- **Final CTA microcopy** (`field_ls_aa_final_cta_microcopy`)
+  - Name: `final_cta_microcopy`
+  - Type: `text`
+  - Value: "We're just around the corner"

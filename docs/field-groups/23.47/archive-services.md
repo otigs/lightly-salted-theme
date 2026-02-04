@@ -1,0 +1,149 @@
+# Services Page
+- Field Group Key: `group_ls_services_page`
+## Fields
+- **Hero headline** (`field_ls_sa_hero_headline`)
+  - Name: `hero_headline`
+  - Type: `text`
+  - Value: "Your Digital Growth Partner"
+- **Hero subheadline** (`field_ls_sa_hero_subheadline`)
+  - Name: `hero_subheadline`
+  - Type: `textarea`
+  - Value: "Expert web solutions and strategic support for growing businesses. We transform your digital presence into a powerful business asset."
+- **Primary CTA label** (`field_ls_sa_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: "View our projects"
+- **Secondary CTA label** (`field_ls_sa_secondary_cta_label`)
+  - Name: `secondary_cta_label`
+  - Type: `text`
+  - Value: "Talk to us"
+- **Services section headline** (`field_ls_sa_services_section_headline`)
+  - Name: `services_section_headline`
+  - Type: `text`
+  - Value: "Core Services designed for people, planet, and business"
+- **Service cards** (`field_ls_sa_service_cards`)
+  - Name: `service_cards`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Service name** (`field_ls_sa_sc_name`)
+      - Name: `service_name`
+      - Type: `text`
+      - Value: "Web Design & Development"
+    - **Service summary** (`field_ls_sa_sc_summary`)
+      - Name: `service_summary`
+      - Type: `textarea`
+      - Value: "Bespoke, responsive WordPress websites designed for speed and conversion. Whether you need a high-impact landing page or a full e-commerce solution, we plant trees with every project."
+    - **Service URL** (`field_ls_sa_sc_url`)
+      - Name: `service_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/service/web-design/"
+    - **Service name** (`field_ls_sa_sc_name`)
+      - Name: `service_name`
+      - Type: `text`
+      - Value: "Hosting & Maintenance"
+    - **Service summary** (`field_ls_sa_sc_summary`)
+      - Name: `service_summary`
+      - Type: `textarea`
+      - Value: "Lightning-fast UK cloud hosting matched with 100% renewable energy. We act as your safety net with daily backups, security scans, and weekly updates to keep your site running smoothly."
+    - **Service URL** (`field_ls_sa_sc_url`)
+      - Name: `service_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/service/wordpress-hosting-and-maintenance/"
+    - **Service name** (`field_ls_sa_sc_name`)
+      - Name: `service_name`
+      - Type: `text`
+      - Value: "Digital Growth Support"
+    - **Service summary** (`field_ls_sa_sc_summary`)
+      - Name: `service_summary`
+      - Type: `textarea`
+      - Value: "Ongoing strategic partnership to keep your business relevant. We handle everything from content updates and UX improvements to analytics and Conversion Rate Optimisation (CRO)."
+    - **Service URL** (`field_ls_sa_sc_url`)
+      - Name: `service_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/service/digital-growth-support/"
+- **How we work headline** (`field_ls_sa_how_we_work_headline`)
+  - Name: `how_we_work_headline`
+  - Type: `text`
+  - Value: "Our Partnership Process"
+- **Process steps** (`field_ls_sa_process_steps`)
+  - Name: `process_steps`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Step title** (`field_ls_sa_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Discovery & Strategy"
+    - **Step detail** (`field_ls_sa_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We start by understanding your business goals. Research shows 95% of winning vendors are on a buyer's 'Day One shortlist', so we focus on validating your expertise immediately through strategic planning."
+    - **Step title** (`field_ls_sa_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Design & Build"
+    - **Step detail** (`field_ls_sa_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "Our team creates bespoke, speed-optimised designs. We focus on clear navigation and technical excellence, ensuring your site passes core web vitals and supports sustainable digital practices."
+    - **Step title** (`field_ls_sa_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Launch & Impact"
+    - **Step detail** (`field_ls_sa_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We manage a smooth go-live process. Upon completion, we plant a thicket of trees (50-100) and offset 1 tonne of CO2, installing a dynamic 'green website' badge to showcase your commitment."
+    - **Step title** (`field_ls_sa_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Growth & Support"
+    - **Step detail** (`field_ls_sa_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "Post-launch, we become your digital growth partner. Through quarterly reviews and annual roadmaps, we ensure your site evolves with your business and the changing digital landscape."
+- **Pricing headline** (`field_ls_sa_pricing_headline`)
+  - Name: `pricing_headline`
+  - Type: `text`
+  - Value: "Transparent Investment"
+- **Pricing body** (`field_ls_sa_pricing_body`)
+  - Name: `pricing_body`
+  - Type: `textarea`
+  - Value: "We believe in honesty and integrity. While every project is bespoke, we provide clear indicators of investment because we know pricing transparency is a top priority for B2B decision-makers."
+- **Pricing CTA label** (`field_ls_sa_pricing_cta_label`)
+  - Name: `pricing_cta_label`
+  - Type: `text`
+  - Value: "Get a quote"
+- **Featured work headline** (`field_ls_sa_featured_work_headline`)
+  - Name: `featured_work_headline`
+  - Type: `text`
+  - Value: "Work that works for you"
+- **Featured work note** (`field_ls_sa_featured_work_note`)
+  - Name: `featured_work_note`
+  - Type: `textarea`
+  - Value: "From increasing leads for Caplor Energy to streamlining community interactions for Restore Community Church, our work is designed to drive measurable business results."
+- **Testimonial note** (`field_ls_sa_testimonial_note`)
+  - Name: `testimonial_note`
+  - Type: `textarea`
+  - Value: "Outstanding from start to finish. Lightly Salted delivered a website that not only looks fantastic but is also easy to manage."
+- **Final CTA headline** (`field_ls_sa_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Ready to grow your digital presence?"
+- **Final CTA body** (`field_ls_sa_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Let's build a website that supports your people, protects the planet, and grows your business."
+- **Final CTA primary label** (`field_ls_sa_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: "Start a project"
+- **Final CTA secondary label** (`field_ls_sa_final_cta_secondary_label`)
+  - Name: `final_cta_secondary_label`
+  - Type: `text`
+  - Value: "Our work"
+- **Final CTA microcopy** (`field_ls_sa_final_cta_microcopy`)
+  - Name: `final_cta_microcopy`
+  - Type: `text`
+  - Value: "We reply within 24 hours"

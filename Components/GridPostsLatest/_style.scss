@@ -10,6 +10,11 @@ flynt-component[name='GridPostsLatest'] {
   }
 
   .post {
+    background-color: var(--color-surface-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+
     .link {
       block-size: 100%;
       color: currentColor;

@@ -1,8 +1,160 @@
 {% extends 'templates/_document.twig' %}
 
 {% block content %}
-  <main class="page page-services">
-    <h1>{{ post.title }}</h1>
-    {# Content is managed by ACF field group "Services Page" – output fields as needed #}
-  </main>
+  {% set service_link = function('get_post_type_archive_link', 'service') %}
+  {% set case_study_link = function('get_post_type_archive_link', 'case_study') %}
+
+  {% if post.meta('hero_headline') or post.meta('hero_subheadline') %}
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
+          {% if post.meta('hero_subheadline') %}
+            <p class="lede">{{ post.meta('hero_subheadline') }}</p>
+          {% endif %}
+          <div class="hero-ctas">
+            {% if post.meta('primary_cta_label') %}
+              <a href="{{ service_link|default('/services/') }}" class="button">{{ post.meta('primary_cta_label') }}</a>
+            {% endif %}
+            {% if post.meta('secondary_cta_label') %}
+              <a href="{{ site.link }}/contact/" class="button button--outlined">{{ post.meta('secondary_cta_label') }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('services_section_headline') or post.meta('service_cards') %}
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          {% if post.meta('services_section_headline') %}
+            <h2>{{ post.meta('services_section_headline') }}</h2>
+          {% endif %}
+        </header>
+        {% if post.meta('service_cards') %}
+          <div class="card-grid">
+            {% for card in post.meta('service_cards') %}
+              <article class="card">
+                <h3 class="card__title">{{ card.service_name }}</h3>
+                {% if card.service_summary %}
+                  <p class="card__meta">{{ card.service_summary }}</p>
+                {% endif %}
+                {% if card.service_url %}
+                  <a class="button button--text" href="{{ card.service_url }}">Learn more</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('how_we_work_headline') or post.meta('process_steps') %}
+    <section class="section section--muted">
+      <div class="container split-layout">
+        <div>
+          {% if post.meta('how_we_work_headline') %}
+            <h2>{{ post.meta('how_we_work_headline') }}</h2>
+          {% endif %}
+        </div>
+        {% if post.meta('process_steps') %}
+          <div class="steps">
+            {% for step in post.meta('process_steps') %}
+              <div class="step">
+                <div class="step__index">{{ loop.index }}</div>
+                <div>
+                  <strong>{{ step.step_title }}</strong>
+                  {% if step.step_detail %}
+                    <p class="card__meta">{{ step.step_detail }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('pricing_headline') or post.meta('pricing_body') %}
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          {% if post.meta('pricing_headline') %}
+            <h2>{{ post.meta('pricing_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('pricing_body') %}
+            <p>{{ post.meta('pricing_body') }}</p>
+          {% endif %}
+          {% if post.meta('pricing_cta_label') %}
+            <a href="{{ site.link }}/contact/" class="button">{{ post.meta('pricing_cta_label') }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('featured_work_headline') or post.meta('featured_work_note') %}
+    <section class="section section--contrast">
+      <div class="container">
+        <header class="section-header">
+          {% if post.meta('featured_work_headline') %}
+            <h2>{{ post.meta('featured_work_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('featured_work_note') %}
+            <p class="section-intro">{{ post.meta('featured_work_note') }}</p>
+          {% endif %}
+        </header>
+        {% if case_studies %}
+          <div class="card-grid">
+            {% for case in case_studies %}
+              <article class="card">
+                <h3 class="card__title">{{ case.title }}</h3>
+                <p class="card__meta">{{ case.excerpt.read_more(false) }}</p>
+                <a class="button button--text" href="{{ case.link|e('esc_url') }}">View case study</a>
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <p><a href="{{ case_study_link|default('/case-studies/') }}" class="button button--outlined">Explore all case studies</a></p>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('testimonial_note') %}
+    <section class="section section--muted">
+      <div class="container">
+        <p class="section-intro">{{ post.meta('testimonial_note') }}</p>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          {% if post.meta('final_cta_headline') %}
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('final_cta_body') %}
+            <p>{{ post.meta('final_cta_body') }}</p>
+          {% endif %}
+          <div class="hero-ctas">
+            {% if post.meta('final_cta_primary_label') %}
+              <a href="{{ site.link }}/contact/" class="button">{{ post.meta('final_cta_primary_label') }}</a>
+            {% endif %}
+            {% if post.meta('final_cta_secondary_label') %}
+              <a href="{{ service_link|default('/services/') }}" class="button button--outlined">{{ post.meta('final_cta_secondary_label') }}</a>
+            {% endif %}
+          </div>
+          {% if post.meta('final_cta_microcopy') %}
+            <p class="cta-panel__microcopy">{{ post.meta('final_cta_microcopy') }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}

@@ -1,0 +1,175 @@
+# Service
+- Field Group Key: `group_ls_service`
+## Fields
+- **Service name** (`field_ls_svc_name`)
+  - Name: `service_name`
+  - Type: `text`
+  - Value: "Technical SEO & Foundation"
+- **Tagline** (`field_ls_svc_tagline`)
+  - Name: `tagline`
+  - Type: `text`
+  - Value: "Built for visibility and speed"
+- **Description** (`field_ls_svc_description`)
+  - Name: `description`
+  - Type: `textarea`
+  - Value: "Visibility starts with a solid foundation. We build websites that Google loves by focusing on technical excellence, speed, and logical structure. Our approach ensures your site is speed-optimised for favorable PageSpeed, Lighthouse, and GTMetrix results, giving you the best possible start for organic growth."
+- **Price indicator** (`field_ls_svc_price_indicator`)
+  - Name: `price_indicator`
+  - Type: `text`
+  - Value: "Included in builds / Audits available"
+- **Primary CTA label** (`field_ls_svc_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: "Audit your site"
+- **What's included heading** (`field_ls_svc_included_heading`)
+  - Name: `included_heading`
+  - Type: `text`
+  - Value: "Technical Excellence"
+- **Included features** (`field_ls_svc_included_features`)
+  - Name: `included_features`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Speed Optimisation"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Advanced caching and code optimisation to ensure lightning-fast load times, a key ranking factor."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Content Structuring"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Expert consultation on content hierarchy and structure to help search engines understand your expertise."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Mobile Optimisation"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Fully responsive designs that perform flawlessly on mobile devices, preventing form abandonment and bounce rates."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+- **Process heading** (`field_ls_svc_process_heading`)
+  - Name: `process_heading`
+  - Type: `text`
+  - Value: "Our Optimization Process"
+- **Process steps** (`field_ls_svc_process_steps`)
+  - Name: `process_steps`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Technical Audit"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We analyze your site's performance, identifying bottlenecks, broken links, and structural issues."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Initial"
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Optimisation"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We implement server-side security, SSL management, and caching to boost core web vitals."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Ongoing"
+- **Why choose us heading** (`field_ls_svc_why_choose_heading`)
+  - Name: `why_choose_heading`
+  - Type: `text`
+  - Value: "A Foundation for Growth"
+- **Differentiators** (`field_ls_svc_differentiators`)
+  - Name: `differentiators`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Differentiator title** (`field_ls_svc_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: "Proven Results"
+    - **Differentiator detail** (`field_ls_svc_diff_detail`)
+      - Name: `diff_detail`
+      - Type: `textarea`
+      - Value: "Clients like Restore Community Church have seen notable improvements in online visibility thanks to our expertise."
+    - **Differentiator title** (`field_ls_svc_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: "Holistic Approach"
+    - **Differentiator detail** (`field_ls_svc_diff_detail`)
+      - Name: `diff_detail`
+      - Type: `textarea`
+      - Value: "We combine technical SEO with strong UX design to ensure visitors stay once they arrive."
+- **Testimonial** (`field_ls_svc_testimonial`)
+  - Name: `testimonial`
+  - Type: `textarea`
+  - Value: "Notable improvement in online visibility thanks to their SEO expertise."
+- **Related case study note** (`field_ls_svc_related_case_study_note`)
+  - Name: `related_case_study_note`
+  - Type: `textarea`
+  - Value: "See how clear structure helped Caplor Energy improve sector branding and lead generation."
+- **Investment heading** (`field_ls_svc_investment_heading`)
+  - Name: `investment_heading`
+  - Type: `text`
+  - Value: "Performance is Standard"
+- **Investment body** (`field_ls_svc_investment_body`)
+  - Name: `investment_body`
+  - Type: `wysiwyg`
+  - Value: "<p>We build technical SEO best practices into every website we develop. For existing sites, we offer technical audits and performance optimisation packages to get your foundation right.</p>"
+- **FAQ heading** (`field_ls_svc_faq_heading`)
+  - Name: `faq_heading`
+  - Type: `text`
+  - Value: "SEO FAQs"
+- **FAQs** (`field_ls_svc_faqs`)
+  - Name: `faqs`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Question** (`field_ls_svc_faq_q`)
+      - Name: `question`
+      - Type: `text`
+      - Value: "Do you offer link building?"
+    - **Answer** (`field_ls_svc_faq_a`)
+      - Name: `answer`
+      - Type: `textarea`
+      - Value: "We focus on on-site technical excellence and content structure—the things you can control. We can partner with specialists for off-site strategies."
+    - **Question** (`field_ls_svc_faq_q`)
+      - Name: `question`
+      - Type: `text`
+      - Value: "How fast will my site be?"
+    - **Answer** (`field_ls_svc_faq_a`)
+      - Name: `answer`
+      - Type: `textarea`
+      - Value: "We aim for high scores on Google PageSpeed and GTMetrix by using advanced caching and clean code."
+- **Final CTA headline** (`field_ls_svc_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Get found online"
+- **Final CTA body** (`field_ls_svc_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Start with a technically perfect website that gives your business the visibility it deserves."

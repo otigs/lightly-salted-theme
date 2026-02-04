@@ -2,18 +2,43 @@
 
 {% block content %}
   <article class="single-case-studies-archive">
-    <header class="entry-header">
-      <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
-      {% if post.meta('hero_intro') %}<p class="intro">{{ post.meta('hero_intro') }}</p>{% endif %}
-    </header>
-    {# Case study grid would be populated via query; placeholder for structure #}
-    <section class="case-study-grid">
-      <p>Case studies listing (query by post type <code>case_study</code>)</p>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
+          {% if post.meta('hero_intro') %}
+            <p class="lede">{{ post.meta('hero_intro') }}</p>
+          {% endif %}
+        </div>
+      </div>
     </section>
+
+    <section class="section section--contrast">
+      <div class="container">
+        {% if case_studies %}
+          <div class="card-grid">
+            {% for case in case_studies %}
+              <article class="card">
+                <h3 class="card__title">{{ case.title }}</h3>
+                <p class="card__meta">{{ case.excerpt.read_more(false) }}</p>
+                <a class="button button--text" href="{{ case.link|e('esc_url') }}">View case study</a>
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
     {% if post.meta('final_cta_headline') %}
-      <section class="final-cta">
-        <h2>{{ post.meta('final_cta_headline') }}</h2>
-        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+            {% if post.meta('final_cta_body') %}
+              <p>{{ post.meta('final_cta_body') }}</p>
+            {% endif %}
+          </div>
+        </div>
       </section>
     {% endif %}
   </article>

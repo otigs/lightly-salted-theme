@@ -1,0 +1,97 @@
+# Areas Covered Page
+- Field Group Key: `group_ls_areas_covered_page`
+## Fields
+- **Hero title** (`field_ls_aa_hero_title`)
+  - Name: `hero_title`
+  - Type: `text`
+  - Value: ""
+- **Hero introduction** (`field_ls_aa_hero_intro`)
+  - Name: `hero_intro`
+  - Type: `textarea`
+  - Value: ""
+- **Breadcrumb label** (`field_ls_aa_breadcrumb_label`)
+  - Name: `breadcrumb_label`
+  - Type: `text`
+  - Value: ""
+- **Map display note** (`field_ls_aa_map_display_note`)
+  - Name: `map_display_note`
+  - Type: `textarea`
+  - Value: ""
+- **Featured areas heading** (`field_ls_aa_featured_areas_heading`)
+  - Name: `featured_areas_heading`
+  - Type: `text`
+  - Value: ""
+- **Featured areas** (`field_ls_aa_featured_areas`)
+  - Name: `featured_areas`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Area name** (`field_ls_aa_fa_name`)
+      - Name: `area_name`
+      - Type: `text`
+      - Value: ""
+    - **Area descriptor** (`field_ls_aa_fa_descriptor`)
+      - Name: `area_descriptor`
+      - Type: `text`
+      - Value: ""
+    - **Area image** (`field_ls_aa_fa_image`)
+      - Name: `area_image`
+      - Type: `image`
+      - Value: ""
+    - **Area URL** (`field_ls_aa_fa_url`)
+      - Name: `area_url`
+      - Type: `url`
+      - Value: ""
+- **All areas heading** (`field_ls_aa_all_areas_heading`)
+  - Name: `all_areas_heading`
+  - Type: `text`
+  - Value: ""
+- **All areas note** (`field_ls_aa_all_areas_note`)
+  - Name: `all_areas_note`
+  - Type: `textarea`
+  - Value: ""
+- **Why local heading** (`field_ls_aa_why_local_heading`)
+  - Name: `why_local_heading`
+  - Type: `text`
+  - Value: ""
+- **Why local body** (`field_ls_aa_why_local_body`)
+  - Name: `why_local_body`
+  - Type: `wysiwyg`
+  - Value: ""
+- **Why local points** (`field_ls_aa_why_local_points`)
+  - Name: `why_local_points`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Point title** (`field_ls_aa_wlp_title`)
+      - Name: `point_title`
+      - Type: `text`
+      - Value: ""
+    - **Point detail** (`field_ls_aa_wlp_detail`)
+      - Name: `point_detail`
+      - Type: `textarea`
+      - Value: ""
+- **Testimonial note** (`field_ls_aa_testimonial_note`)
+  - Name: `testimonial_note`
+  - Type: `textarea`
+  - Value: ""
+- **Final CTA headline** (`field_ls_aa_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: ""
+- **Final CTA body** (`field_ls_aa_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: ""
+- **Final CTA primary label** (`field_ls_aa_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA secondary label** (`field_ls_aa_final_cta_secondary_label`)
+  - Name: `final_cta_secondary_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA microcopy** (`field_ls_aa_final_cta_microcopy`)
+  - Name: `final_cta_microcopy`
+  - Type: `text`
+  - Value: ""

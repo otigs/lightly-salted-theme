@@ -22,8 +22,12 @@ flynt-component[name='GridPostsArchive'] {
   }
 
   .post {
+    background-color: var(--color-surface-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     inline-size: var(--grid-item-width);
     max-inline-size: var(--grid-item-max-width);
+    overflow: hidden;
 
     .link {
       block-size: 100%;

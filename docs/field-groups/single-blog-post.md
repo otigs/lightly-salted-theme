@@ -1,0 +1,92 @@
+# Blog Post
+- Field Group Key: `group_ls_blog_post`
+## Fields
+- **Category** (`field_ls_bp_category`)
+  - Name: `category`
+  - Type: `text`
+  - Value: ""
+- **Post title (display)** (`field_ls_bp_post_title_display`)
+  - Name: `post_title_display`
+  - Type: `text`
+  - Value: ""
+- **Publication date** (`field_ls_bp_publication_date`)
+  - Name: `publication_date`
+  - Type: `date_picker`
+  - Value: ""
+- **Read time** (`field_ls_bp_read_time`)
+  - Name: `read_time`
+  - Type: `text`
+  - Value: ""
+- **Author** (`field_ls_bp_author`)
+  - Name: `author`
+  - Type: `group`
+  - Value: ""
+  - Sub fields:
+    - **Author name** (`field_ls_bp_a_name`)
+      - Name: `author_name`
+      - Type: `text`
+      - Value: ""
+    - **Author role** (`field_ls_bp_a_role`)
+      - Name: `author_role`
+      - Type: `text`
+      - Value: ""
+    - **Author bio** (`field_ls_bp_a_bio`)
+      - Name: `author_bio`
+      - Type: `textarea`
+      - Value: ""
+    - **Author photo** (`field_ls_bp_a_photo`)
+      - Name: `author_photo`
+      - Type: `image`
+      - Value: ""
+    - **Author LinkedIn** (`field_ls_bp_a_linkedin`)
+      - Name: `author_linkedin`
+      - Type: `url`
+      - Value: ""
+- **Featured image** (`field_ls_bp_featured_image`)
+  - Name: `featured_image`
+  - Type: `image`
+  - Value: ""
+- **Featured image caption** (`field_ls_bp_featured_image_caption`)
+  - Name: `featured_image_caption`
+  - Type: `text`
+  - Value: ""
+- **Body** (`field_ls_bp_body`)
+  - Name: `body`
+  - Type: `wysiwyg`
+  - Value: ""
+- **Share note** (`field_ls_bp_share_note`)
+  - Name: `share_note`
+  - Type: `textarea`
+  - Value: ""
+- **Related posts note** (`field_ls_bp_related_posts_note`)
+  - Name: `related_posts_note`
+  - Type: `textarea`
+  - Value: ""
+- **Newsletter headline** (`field_ls_bp_newsletter_headline`)
+  - Name: `newsletter_headline`
+  - Type: `text`
+  - Value: ""
+- **Newsletter body** (`field_ls_bp_newsletter_body`)
+  - Name: `newsletter_body`
+  - Type: `textarea`
+  - Value: ""
+- **Newsletter CTA label** (`field_ls_bp_newsletter_cta_label`)
+  - Name: `newsletter_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA headline** (`field_ls_bp_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: ""
+- **Final CTA body** (`field_ls_bp_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: ""
+- **Final CTA primary label** (`field_ls_bp_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA secondary label** (`field_ls_bp_final_cta_secondary_label`)
+  - Name: `final_cta_secondary_label`
+  - Type: `text`
+  - Value: ""

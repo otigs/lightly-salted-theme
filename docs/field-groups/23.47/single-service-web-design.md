@@ -1,0 +1,187 @@
+# Service
+- Field Group Key: `group_ls_service`
+## Fields
+- **Service name** (`field_ls_svc_name`)
+  - Name: `service_name`
+  - Type: `text`
+  - Value: "Web Design & Development"
+- **Tagline** (`field_ls_svc_tagline`)
+  - Name: `tagline`
+  - Type: `text`
+  - Value: "Bespoke, sustainable websites that convert"
+- **Description** (`field_ls_svc_description`)
+  - Name: `description`
+  - Type: `textarea`
+  - Value: "We create bespoke, responsive WordPress websites that balance technical excellence with environmental responsibility. From high-converting landing pages to complex e-commerce platforms, our designs are built to validate your expertise and turn visitors into clients. Research shows 75% of B2B buyers judge a company's credibility based on its website design—we ensure yours makes the right first impression."
+- **Price indicator** (`field_ls_svc_price_indicator`)
+  - Name: `price_indicator`
+  - Type: `text`
+  - Value: "Projects from £X,XXX"
+- **Primary CTA label** (`field_ls_svc_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: "View our portfolio"
+- **What's included heading** (`field_ls_svc_included_heading`)
+  - Name: `included_heading`
+  - Type: `text`
+  - Value: "Built for speed and sustainability"
+- **Included features** (`field_ls_svc_included_features`)
+  - Name: `included_features`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Bespoke Design"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Reusable, multi-page responsive designs built specifically for your brand on WordPress."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Performance Optimised"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Speed optimised for strong Google PageSpeed, Lighthouse, and GTMetrix results."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Eco-Friendly Impact"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "We plant a thicket of 50-100 trees and offset 1 tonne of CO2 with every project, including a dynamic 'green website' badge."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+- **Process heading** (`field_ls_svc_process_heading`)
+  - Name: `process_heading`
+  - Type: `text`
+  - Value: "Our Design Process"
+- **Process steps** (`field_ls_svc_process_steps`)
+  - Name: `process_steps`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Structure & Strategy"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We provide expert content structuring recommendations to ensure your site communicates clearly."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Weeks 1-2"
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Design & Development"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We build your future-proof foundation, ensuring the site is easy to edit and extend with additional pages."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Weeks 3-6"
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Launch & Optimisation"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We handle the full launch, setup analytics, and ensure Conversion Rate Optimisation (CRO) is in place."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Week 7+"
+- **Why choose us heading** (`field_ls_svc_why_choose_heading`)
+  - Name: `why_choose_heading`
+  - Type: `text`
+  - Value: "Websites that do good"
+- **Differentiators** (`field_ls_svc_differentiators`)
+  - Name: `differentiators`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Differentiator title** (`field_ls_svc_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: "Positive for Planet"
+    - **Differentiator detail** (`field_ls_svc_diff_detail`)
+      - Name: `diff_detail`
+      - Type: `textarea`
+      - Value: "We are members of 1% for the Planet and use 100% renewable energy hosting."
+    - **Differentiator title** (`field_ls_svc_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: "User-Centric Research"
+    - **Differentiator detail** (`field_ls_svc_diff_detail`)
+      - Name: `diff_detail`
+      - Type: `textarea`
+      - Value: "Our designs are grounded in research, prioritizing navigation, trust signals, and clear pricing transparency."
+- **Testimonial** (`field_ls_svc_testimonial`)
+  - Name: `testimonial`
+  - Type: `textarea`
+  - Value: "Diligent and helpful throughout the whole process from design to going live. The new website improved sector branding... resulting in increased leads and business."
+- **Related case study note** (`field_ls_svc_related_case_study_note`)
+  - Name: `related_case_study_note`
+  - Type: `textarea`
+  - Value: "Read how Caplor Energy increased their leads through our strategic redesign."
+- **Investment heading** (`field_ls_svc_investment_heading`)
+  - Name: `investment_heading`
+  - Type: `text`
+  - Value: "Your Investment"
+- **Investment body** (`field_ls_svc_investment_body`)
+  - Name: `investment_body`
+  - Type: `wysiwyg`
+  - Value: "<p>We offer transparent packages for Landing Pages, Brochure Websites (2-7 pages), and E-commerce sites (up to 20 pages). Every quote includes our commitment to planting trees and offsetting carbon.</p>"
+- **FAQ heading** (`field_ls_svc_faq_heading`)
+  - Name: `faq_heading`
+  - Type: `text`
+  - Value: "FAQs"
+- **FAQs** (`field_ls_svc_faqs`)
+  - Name: `faqs`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Question** (`field_ls_svc_faq_q`)
+      - Name: `question`
+      - Type: `text`
+      - Value: "Do you use templates?"
+    - **Answer** (`field_ls_svc_faq_a`)
+      - Name: `answer`
+      - Type: `textarea`
+      - Value: "No, we build bespoke responsive WordPress designs tailored to your specific goals."
+    - **Question** (`field_ls_svc_faq_q`)
+      - Name: `question`
+      - Type: `text`
+      - Value: "Will my site be mobile friendly?"
+    - **Answer** (`field_ls_svc_faq_a`)
+      - Name: `answer`
+      - Type: `textarea`
+      - Value: "Absolutely. We ensure full responsiveness and mobile optimisation as a standard."
+- **Final CTA headline** (`field_ls_svc_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Ready to start?"
+- **Final CTA body** (`field_ls_svc_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Get a bespoke website that looks great, performs perfectly, and gives back to the planet."

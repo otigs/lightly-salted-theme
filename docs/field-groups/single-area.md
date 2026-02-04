@@ -1,0 +1,93 @@
+# Area
+- Field Group Key: `group_ls_area`
+## Fields
+- **Area name** (`field_ls_ar_area_name`)
+  - Name: `area_name`
+  - Type: `text`
+  - Value: ""
+- **Hero title** (`field_ls_ar_hero_title`)
+  - Name: `hero_title`
+  - Type: `text`
+  - Value: ""
+- **Hero introduction** (`field_ls_ar_hero_intro`)
+  - Name: `hero_intro`
+  - Type: `textarea`
+  - Value: ""
+- **Primary CTA label** (`field_ls_ar_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Secondary CTA label** (`field_ls_ar_secondary_cta_label`)
+  - Name: `secondary_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Services heading** (`field_ls_ar_services_heading`)
+  - Name: `services_heading`
+  - Type: `text`
+  - Value: ""
+- **Services note** (`field_ls_ar_services_note`)
+  - Name: `services_note`
+  - Type: `textarea`
+  - Value: ""
+- **Local case studies heading** (`field_ls_ar_local_case_studies_heading`)
+  - Name: `local_case_studies_heading`
+  - Type: `text`
+  - Value: ""
+- **Local case studies note** (`field_ls_ar_local_case_studies_note`)
+  - Name: `local_case_studies_note`
+  - Type: `textarea`
+  - Value: ""
+- **Local agency heading** (`field_ls_ar_local_agency_heading`)
+  - Name: `local_agency_heading`
+  - Type: `text`
+  - Value: ""
+- **Local agency body** (`field_ls_ar_local_agency_body`)
+  - Name: `local_agency_body`
+  - Type: `wysiwyg`
+  - Value: ""
+- **Local agency benefits** (`field_ls_ar_local_agency_benefits`)
+  - Name: `local_agency_benefits`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Benefit title** (`field_ls_ar_ab_title`)
+      - Name: `benefit_title`
+      - Type: `text`
+      - Value: ""
+    - **Benefit detail** (`field_ls_ar_ab_detail`)
+      - Name: `benefit_detail`
+      - Type: `textarea`
+      - Value: ""
+- **Testimonial note** (`field_ls_ar_testimonial_note`)
+  - Name: `testimonial_note`
+  - Type: `textarea`
+  - Value: ""
+- **Nearby areas heading** (`field_ls_ar_nearby_areas_heading`)
+  - Name: `nearby_areas_heading`
+  - Type: `text`
+  - Value: ""
+- **Nearby areas** (`field_ls_ar_nearby_areas`)
+  - Name: `nearby_areas`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Nearby area name** (`field_ls_ar_na_name`)
+      - Name: `nearby_area_name`
+      - Type: `text`
+      - Value: ""
+    - **Nearby area URL** (`field_ls_ar_na_url`)
+      - Name: `nearby_area_url`
+      - Type: `url`
+      - Value: ""
+- **Final CTA headline** (`field_ls_ar_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: ""
+- **Final CTA body** (`field_ls_ar_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: ""
+- **Contact note** (`field_ls_ar_contact_note`)
+  - Name: `contact_note`
+  - Type: `textarea`
+  - Value: ""

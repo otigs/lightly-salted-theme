@@ -1,18 +1,112 @@
 {% extends 'templates/_document.twig' %}
 
 {% block content %}
+  {% set topic = term|default(post) %}
+
   <article class="single-blog-topic">
-    <header class="entry-header">
-      <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
-      {% if post.meta('hero_subheadline') %}<p class="subheadline">{{ post.meta('hero_subheadline') }}</p>{% endif %}
-    </header>
-    {# Posts listing for this topic would be via query by category/taxonomy #}
-    <section class="posts-listing">
-      <p>Blog posts for this topic (query by category/taxonomy)</p>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          {% if topic.meta('breadcrumb_label') %}
+            <div class="page-hero__breadcrumbs">{{ topic.meta('breadcrumb_label') }}</div>
+          {% endif %}
+          <h1>{{ topic.meta('hero_headline')|default(topic.title) }}</h1>
+          {% if topic.meta('hero_subheadline') %}
+            <p class="lede">{{ topic.meta('hero_subheadline') }}</p>
+          {% endif %}
+        </div>
+      </div>
     </section>
-    {% if post.meta('final_cta_headline') %}
-      <section class="final-cta">
-        <h2>{{ post.meta('final_cta_headline') }}</h2>
+
+    {% if topic.meta('posts_section_headline') or topic.meta('posts_listing_note') %}
+      <section class="section section--contrast" {{ topic.meta('pagination_mode') ? 'data-pagination-mode="' ~ topic.meta('pagination_mode') ~ '"' }}>
+        <div class="container">
+          {% if topic.meta('posts_section_headline') %}
+            <h2>{{ topic.meta('posts_section_headline') }}</h2>
+          {% endif %}
+          {% if topic.meta('posts_listing_note') %}
+            <p class="section-intro">{{ topic.meta('posts_listing_note') }}</p>
+          {% endif %}
+          {% if topic_posts %}
+            <div class="card-grid">
+              {% for entry in topic_posts %}
+                <article class="card">
+                  <h3 class="card__title">{{ entry.title }}</h3>
+                  <p class="card__meta">{{ entry.excerpt.read_more(false) }}</p>
+                  <a class="button button--text" href="{{ entry.link|e('esc_url') }}">Read article</a>
+                </article>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if topic.meta('milestones_enabled') and topic.meta('milestones') %}
+      <section class="section">
+        <div class="container">
+          <div class="steps">
+            {% for milestone in topic.meta('milestones') %}
+              <div class="step">
+                <div class="step__index">{{ loop.index }}</div>
+                <div>
+                  <strong>{{ milestone.milestone_title }}</strong>
+                  {% if milestone.milestone_detail %}
+                    <p class="card__meta">{{ milestone.milestone_detail }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if topic.meta('cross_links_headline') or topic.meta('cross_links') %}
+      <section class="section section--muted">
+        <div class="container">
+          {% if topic.meta('cross_links_headline') %}
+            <h2>{{ topic.meta('cross_links_headline') }}</h2>
+          {% endif %}
+          {% if topic.meta('cross_links') %}
+            <div class="groupContainer">
+              {% for link in topic.meta('cross_links') %}
+                <a class="pill" href="{{ link.link_url|default('#') }}">{{ link.link_label }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if topic.meta('newsletter_headline') or topic.meta('newsletter_body') %}
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            {% if topic.meta('newsletter_headline') %}
+              <h2>{{ topic.meta('newsletter_headline') }}</h2>
+            {% endif %}
+            {% if topic.meta('newsletter_body') %}
+              <p>{{ topic.meta('newsletter_body') }}</p>
+            {% endif %}
+            {% if topic.meta('newsletter_cta_label') %}
+              <a href="{{ site.link }}/contact/" class="button">{{ topic.meta('newsletter_cta_label') }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if topic.meta('final_cta_headline') %}
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            <h2>{{ topic.meta('final_cta_headline') }}</h2>
+            {% if topic.meta('final_cta_primary_label') %}
+              <a href="{{ topic.meta('final_cta_primary_url')|default(site.link ~ '/contact/') }}" class="button">{{ topic.meta('final_cta_primary_label') }}</a>
+            {% endif %}
+          </div>
+        </div>
       </section>
     {% endif %}
   </article>

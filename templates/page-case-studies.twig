@@ -1,8 +1,121 @@
 {% extends 'templates/_document.twig' %}
 
 {% block content %}
-  <main class="page page-case-studies">
-    <h1>{{ post.title }}</h1>
-    {# Content is managed by ACF field group "Case Studies Page" – output fields as needed #}
-  </main>
+  {% set case_study_link = function('get_post_type_archive_link', 'case_study') %}
+
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div>
+        {% if post.meta('breadcrumb_label') %}
+          <div class="page-hero__breadcrumbs">{{ post.meta('breadcrumb_label') }}</div>
+        {% endif %}
+        <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
+        {% if post.meta('hero_intro') %}
+          <p class="lede">{{ post.meta('hero_intro') }}</p>
+        {% endif %}
+        {% if post.meta('alternative_titles') %}
+          <p class="note">{{ post.meta('alternative_titles') }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if post.meta('filters_label') or post.meta('industry_filters') or post.meta('service_filters') %}
+    <section class="section section--muted">
+      <div class="container">
+        {% if post.meta('filters_label') %}
+          <p class="eyebrow">{{ post.meta('filters_label') }}</p>
+        {% endif %}
+        <div class="groupContainer">
+          {% for filter in post.meta('industry_filters') %}
+            <span class="pill">{{ filter.filter_label }}</span>
+          {% endfor %}
+          {% for filter in post.meta('service_filters') %}
+            <span class="pill">{{ filter.filter_label }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('featured_case_study_note') %}
+    <section class="section">
+      <div class="container">
+        <p class="section-intro">{{ post.meta('featured_case_study_note') }}</p>
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="section section--contrast">
+    <div class="container">
+      {% if post.meta('case_study_grid_note') %}
+        <p class="section-intro">{{ post.meta('case_study_grid_note') }}</p>
+      {% endif %}
+      {% if case_studies %}
+        <div class="card-grid">
+          {% for case in case_studies %}
+            <article class="card">
+              <h3 class="card__title">{{ case.title }}</h3>
+              <p class="card__meta">{{ case.excerpt.read_more(false) }}</p>
+              <a class="button button--text" href="{{ case.link|e('esc_url') }}">View case study</a>
+            </article>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if case_study_link %}
+        <p><a href="{{ case_study_link }}" class="button button--outlined">View all case studies</a></p>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if post.meta('results_summary_headline') or post.meta('results_summary_metrics') %}
+    <section class="section">
+      <div class="container">
+        {% if post.meta('results_summary_headline') %}
+          <h2>{{ post.meta('results_summary_headline') }}</h2>
+        {% endif %}
+        {% if post.meta('results_summary_metrics') %}
+          <div class="metrics-grid">
+            {% for metric in post.meta('results_summary_metrics') %}
+              <div class="metric">
+                <div class="metric__value">{{ metric.metric_detail }}</div>
+                <div class="metric__label">{{ metric.metric_label }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('testimonial_strip_note') %}
+    <section class="section section--muted">
+      <div class="container">
+        <p class="section-intro">{{ post.meta('testimonial_strip_note') }}</p>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          {% if post.meta('final_cta_headline') %}
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('final_cta_body') %}
+            <p>{{ post.meta('final_cta_body') }}</p>
+          {% endif %}
+          <div class="hero-ctas">
+            {% if post.meta('final_cta_primary_label') %}
+              <a href="{{ site.link }}/contact/" class="button">{{ post.meta('final_cta_primary_label') }}</a>
+            {% endif %}
+            {% if post.meta('final_cta_secondary_label') %}
+              <a href="{{ site.link }}/services/" class="button button--outlined">{{ post.meta('final_cta_secondary_label') }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}

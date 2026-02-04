@@ -2,17 +2,126 @@
 
 {% block content %}
   <article class="single-area">
-    <header class="entry-header">
-      <h1>{{ post.meta('hero_title')|default(post.meta('area_name')|default(post.title)) }}</h1>
-      {% if post.meta('hero_intro') %}<p class="intro">{{ post.meta('hero_intro') }}</p>{% endif %}
-    </header>
-    {% if post.meta('local_agency_body') %}
-      <section class="local-agency">{{ post.meta('local_agency_body')|raw }}</section>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          <h1>{{ post.meta('hero_title')|default(post.meta('area_name')|default(post.title)) }}</h1>
+          {% if post.meta('hero_intro') %}
+            <p class="lede">{{ post.meta('hero_intro') }}</p>
+          {% endif %}
+          <div class="hero-ctas">
+            {% if post.meta('primary_cta_label') %}
+              <a href="{{ site.link }}/contact/" class="button">{{ post.meta('primary_cta_label') }}</a>
+            {% endif %}
+            {% if post.meta('secondary_cta_label') %}
+              <a href="{{ site.link }}/services/" class="button button--outlined">{{ post.meta('secondary_cta_label') }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% if post.meta('services_heading') or post.meta('services_note') %}
+      <section class="section">
+        <div class="container">
+          {% if post.meta('services_heading') %}
+            <h2>{{ post.meta('services_heading') }}</h2>
+          {% endif %}
+          {% if post.meta('services_note') %}
+            <p class="section-intro">{{ post.meta('services_note') }}</p>
+          {% endif %}
+        </div>
+      </section>
     {% endif %}
-    {% if post.meta('final_cta_headline') %}
-      <section class="final-cta">
-        <h2>{{ post.meta('final_cta_headline') }}</h2>
-        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+
+    {% if post.meta('local_case_studies_heading') or post.meta('local_case_studies_note') %}
+      <section class="section section--muted">
+        <div class="container">
+          {% if post.meta('local_case_studies_heading') %}
+            <h2>{{ post.meta('local_case_studies_heading') }}</h2>
+          {% endif %}
+          {% if post.meta('local_case_studies_note') %}
+            <p class="section-intro">{{ post.meta('local_case_studies_note') }}</p>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('local_agency_heading') or post.meta('local_agency_body') %}
+      <section class="section">
+        <div class="container split-layout">
+          <div>
+            {% if post.meta('local_agency_heading') %}
+              <h2>{{ post.meta('local_agency_heading') }}</h2>
+            {% endif %}
+            {% if post.meta('local_agency_body') %}
+              <div class="paragraph">{{ post.meta('local_agency_body')|raw }}</div>
+            {% endif %}
+          </div>
+          {% if post.meta('local_agency_benefits') %}
+            <div class="icon-list">
+              {% for benefit in post.meta('local_agency_benefits') %}
+                <div class="icon-list__item">
+                  <div class="pill">{{ loop.index }}</div>
+                  <div>
+                    <strong>{{ benefit.benefit_title }}</strong>
+                    {% if benefit.benefit_detail %}
+                      <p class="card__meta">{{ benefit.benefit_detail }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('testimonial_note') %}
+      <section class="section section--contrast">
+        <div class="container">
+          <p class="section-intro">{{ post.meta('testimonial_note') }}</p>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('nearby_areas_heading') or post.meta('nearby_areas') %}
+      <section class="section">
+        <div class="container">
+          {% if post.meta('nearby_areas_heading') %}
+            <h2>{{ post.meta('nearby_areas_heading') }}</h2>
+          {% endif %}
+          {% if post.meta('nearby_areas') %}
+            <div class="groupContainer">
+              {% for area in post.meta('nearby_areas') %}
+                <a class="pill" href="{{ area.nearby_area_url|default('#') }}">{{ area.nearby_area_name }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            {% if post.meta('final_cta_headline') %}
+              <h2>{{ post.meta('final_cta_headline') }}</h2>
+            {% endif %}
+            {% if post.meta('final_cta_body') %}
+              <p>{{ post.meta('final_cta_body') }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('contact_note') %}
+      <section class="section section--muted">
+        <div class="container">
+          <p class="note">{{ post.meta('contact_note') }}</p>
+        </div>
       </section>
     {% endif %}
   </article>

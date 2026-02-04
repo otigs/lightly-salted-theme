@@ -1,0 +1,123 @@
+# Service
+- Field Group Key: `group_ls_service`
+## Fields
+- **Service name** (`field_ls_svc_name`)
+  - Name: `service_name`
+  - Type: `text`
+  - Value: ""
+- **Tagline** (`field_ls_svc_tagline`)
+  - Name: `tagline`
+  - Type: `text`
+  - Value: ""
+- **Description** (`field_ls_svc_description`)
+  - Name: `description`
+  - Type: `textarea`
+  - Value: ""
+- **Price indicator** (`field_ls_svc_price_indicator`)
+  - Name: `price_indicator`
+  - Type: `text`
+  - Value: ""
+- **Primary CTA label** (`field_ls_svc_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: ""
+- **What's included heading** (`field_ls_svc_included_heading`)
+  - Name: `included_heading`
+  - Type: `text`
+  - Value: ""
+- **Included features** (`field_ls_svc_included_features`)
+  - Name: `included_features`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: ""
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: ""
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+- **Process heading** (`field_ls_svc_process_heading`)
+  - Name: `process_heading`
+  - Type: `text`
+  - Value: ""
+- **Process steps** (`field_ls_svc_process_steps`)
+  - Name: `process_steps`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: ""
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: ""
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: ""
+- **Why choose us heading** (`field_ls_svc_why_choose_heading`)
+  - Name: `why_choose_heading`
+  - Type: `text`
+  - Value: ""
+- **Differentiators** (`field_ls_svc_differentiators`)
+  - Name: `differentiators`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Differentiator title** (`field_ls_svc_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: ""
+    - **Differentiator detail** (`field_ls_svc_diff_detail`)
+      - Name: `diff_detail`
+      - Type: `textarea`
+      - Value: ""
+- **Testimonial** (`field_ls_svc_testimonial`)
+  - Name: `testimonial`
+  - Type: `textarea`
+  - Value: ""
+- **Related case study note** (`field_ls_svc_related_case_study_note`)
+  - Name: `related_case_study_note`
+  - Type: `textarea`
+  - Value: ""
+- **Investment heading** (`field_ls_svc_investment_heading`)
+  - Name: `investment_heading`
+  - Type: `text`
+  - Value: ""
+- **Investment body** (`field_ls_svc_investment_body`)
+  - Name: `investment_body`
+  - Type: `wysiwyg`
+  - Value: ""
+- **FAQ heading** (`field_ls_svc_faq_heading`)
+  - Name: `faq_heading`
+  - Type: `text`
+  - Value: ""
+- **FAQs** (`field_ls_svc_faqs`)
+  - Name: `faqs`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Question** (`field_ls_svc_faq_q`)
+      - Name: `question`
+      - Type: `text`
+      - Value: ""
+    - **Answer** (`field_ls_svc_faq_a`)
+      - Name: `answer`
+      - Type: `textarea`
+      - Value: ""
+- **Final CTA headline** (`field_ls_svc_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: ""
+- **Final CTA body** (`field_ls_svc_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: ""

@@ -1,0 +1,187 @@
+# Service
+- Field Group Key: `group_ls_service`
+## Fields
+- **Service name** (`field_ls_svc_name`)
+  - Name: `service_name`
+  - Type: `text`
+  - Value: "Digital Growth Support"
+- **Tagline** (`field_ls_svc_tagline`)
+  - Name: `tagline`
+  - Type: `text`
+  - Value: "Expert help to keep your business evolving"
+- **Description** (`field_ls_svc_description`)
+  - Name: `description`
+  - Type: `textarea`
+  - Value: "Successful businesses must keep evolving to remain relevant. In a digital world where customer demands pivot quickly, we serve as your dedicated partner. From small content updates to complete redesigns and Conversion Rate Optimisation (CRO), we ensure your website remains a powerful business asset that drives measurable success."
+- **Price indicator** (`field_ls_svc_price_indicator`)
+  - Name: `price_indicator`
+  - Type: `text`
+  - Value: "Retainers from £X/month"
+- **Primary CTA label** (`field_ls_svc_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: "Discuss your growth plans"
+- **What's included heading** (`field_ls_svc_included_heading`)
+  - Name: `included_heading`
+  - Type: `text`
+  - Value: "A true partnership approach"
+- **Included features** (`field_ls_svc_included_features`)
+  - Name: `included_features`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Account Management"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Dedicated account manager for consistent communication and priority response to strategic queries."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Strategic Roadmap"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Annual development roadmaps aligned with your business objectives and quarterly strategy reviews to track progress."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+    - **Feature title** (`field_ls_svc_if_title`)
+      - Name: `feature_title`
+      - Type: `text`
+      - Value: "Performance Optimisation"
+    - **Feature detail** (`field_ls_svc_if_detail`)
+      - Name: `feature_detail`
+      - Type: `textarea`
+      - Value: "Continuous improvements to site speed, mobile-friendliness, and User Experience (UX) to boost conversions."
+    - **Feature icon** (`field_ls_svc_if_icon`)
+      - Name: `feature_icon`
+      - Type: `image`
+      - Value: ""
+- **Process heading** (`field_ls_svc_process_heading`)
+  - Name: `process_heading`
+  - Type: `text`
+  - Value: "How we partner with you"
+- **Process steps** (`field_ls_svc_process_steps`)
+  - Name: `process_steps`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Audit & Insight"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We begin by analyzing your current performance. Using insight reports, we identify opportunities for growth and areas for improvement."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Month 1"
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Roadmap Creation"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We collaborate to create a clear plan for the year, aligning digital strategies with your broader business goals."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Month 1-2"
+    - **Step title** (`field_ls_svc_ps_title`)
+      - Name: `step_title`
+      - Type: `text`
+      - Value: "Execution & Review"
+    - **Step detail** (`field_ls_svc_ps_detail`)
+      - Name: `step_detail`
+      - Type: `textarea`
+      - Value: "We implement changes, integrate tools (like CRMs), and hold quarterly reviews to measure success and pivot as needed."
+    - **Step timing** (`field_ls_svc_ps_timing`)
+      - Name: `step_timing`
+      - Type: `text`
+      - Value: "Ongoing"
+- **Why choose us heading** (`field_ls_svc_why_choose_heading`)
+  - Name: `why_choose_heading`
+  - Type: `text`
+  - Value: "Your Digital Orchestra Conductor"
+- **Differentiators** (`field_ls_svc_differentiators`)
+  - Name: `differentiators`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Differentiator title** (`field_ls_svc_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: "Proactive Partnership"
+    - **Differentiator detail** (`field_ls_svc_diff_detail`)
+      - Name: `diff_detail`
+      - Type: `textarea`
+      - Value: "We don't just fix bugs; we provide proactive recommendations to help your business grow."
+    - **Differentiator title** (`field_ls_svc_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: "Values-Led Support"
+    - **Differentiator detail** (`field_ls_svc_diff_detail`)
+      - Name: `diff_detail`
+      - Type: `textarea`
+      - Value: "We operate with honesty and integrity. You get expert advice without the hard sell."
+- **Testimonial** (`field_ls_svc_testimonial`)
+  - Name: `testimonial`
+  - Type: `textarea`
+  - Value: "Lightly Salted have developed an excellent website... listened carefully to the requirements... pro-active on timescales... good advice."
+- **Related case study note** (`field_ls_svc_related_case_study_note`)
+  - Name: `related_case_study_note`
+  - Type: `textarea`
+  - Value: "See how we helped Restore Community Church improve their online visibility and streamline community interactions."
+- **Investment heading** (`field_ls_svc_investment_heading`)
+  - Name: `investment_heading`
+  - Type: `text`
+  - Value: "Investing in Growth"
+- **Investment body** (`field_ls_svc_investment_body`)
+  - Name: `investment_body`
+  - Type: `wysiwyg`
+  - Value: "<p>Our support packages are designed to provide consistent value. By retaining us as your digital partner, you ensure your website evolves to meet user expectations—critical in a market where 70-80% of the decision journey happens before contact.</p>"
+- **FAQ heading** (`field_ls_svc_faq_heading`)
+  - Name: `faq_heading`
+  - Type: `text`
+  - Value: "Common Questions"
+- **FAQs** (`field_ls_svc_faqs`)
+  - Name: `faqs`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Question** (`field_ls_svc_faq_q`)
+      - Name: `question`
+      - Type: `text`
+      - Value: "Can you help with updates on a site you didn't build?"
+    - **Answer** (`field_ls_svc_faq_a`)
+      - Name: `answer`
+      - Type: `textarea`
+      - Value: "Yes, we often take over maintenance and support for existing WordPress sites after a technical audit."
+    - **Question** (`field_ls_svc_faq_q`)
+      - Name: `question`
+      - Type: `text`
+      - Value: "How do you track success?"
+    - **Answer** (`field_ls_svc_faq_a`)
+      - Name: `answer`
+      - Type: `textarea`
+      - Value: "We use quarterly strategy reviews and insight reports to track performance against your specific business goals."
+- **Final CTA headline** (`field_ls_svc_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Let's grow together"
+- **Final CTA body** (`field_ls_svc_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Partner with a team that cares about your results as much as you do."

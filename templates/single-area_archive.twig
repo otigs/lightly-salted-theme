@@ -2,27 +2,60 @@
 
 {% block content %}
   <article class="single-areas-archive">
-    <header class="entry-header">
-      <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
-      {% if post.meta('hero_intro') %}<p class="intro">{{ post.meta('hero_intro') }}</p>{% endif %}
-    </header>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
+          {% if post.meta('hero_intro') %}
+            <p class="lede">{{ post.meta('hero_intro') }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
     {% if post.meta('featured_areas') %}
-      <section class="featured-areas">
-        <h2>{{ post.meta('featured_areas_heading')|default('Featured areas') }}</h2>
-        <div class="areas-grid">
-          {% for area in post.meta('featured_areas') %}
-            <article class="area-card">
-              <h3>{{ area.area_name }}</h3>
-              {% if area.area_descriptor %}<p>{{ area.area_descriptor }}</p>{% endif %}
-              {% if area.area_url %}<a href="{{ area.area_url }}">View</a>{% endif %}
-            </article>
-          {% endfor %}
+      <section class="section">
+        <div class="container">
+          <h2>{{ post.meta('featured_areas_heading')|default('Featured areas') }}</h2>
+          <div class="card-grid">
+            {% for area in post.meta('featured_areas') %}
+              <article class="card">
+                <h3 class="card__title">{{ area.area_name }}</h3>
+                {% if area.area_descriptor %}
+                  <p class="card__meta">{{ area.area_descriptor }}</p>
+                {% endif %}
+                {% if area.area_url %}
+                  <a class="button button--text" href="{{ area.area_url }}">View</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
         </div>
       </section>
     {% endif %}
+
+    {% if areas %}
+      <section class="section section--contrast">
+        <div class="container">
+          <div class="card-grid">
+            {% for area in areas %}
+              <article class="card">
+                <h3 class="card__title">{{ area.title }}</h3>
+                <a class="button button--text" href="{{ area.link|e('esc_url') }}">View area</a>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
     {% if post.meta('final_cta_headline') %}
-      <section class="final-cta">
-        <h2>{{ post.meta('final_cta_headline') }}</h2>
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+          </div>
+        </div>
       </section>
     {% endif %}
   </article>

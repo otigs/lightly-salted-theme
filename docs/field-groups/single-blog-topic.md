@@ -1,0 +1,89 @@
+# Blog Topic
+- Field Group Key: `group_ls_blog_topic`
+## Fields
+- **Topic name** (`field_ls_bt_topic_name`)
+  - Name: `topic_name`
+  - Type: `text`
+  - Value: "[Dynamic - pulled from taxonomy]"
+- **Hero headline** (`field_ls_bt_hero_headline`)
+  - Name: `hero_headline`
+  - Type: `text`
+  - Value: "[Dynamic - e.g. 'Website Performance', 'User Experience']"
+- **Hero subheadline** (`field_ls_bt_hero_subheadline`)
+  - Name: `hero_subheadline`
+  - Type: `textarea`
+  - Value: "[Dynamic - topic-specific description]"
+- **Breadcrumb label** (`field_ls_bt_breadcrumb_label`)
+  - Name: `breadcrumb_label`
+  - Type: `text`
+  - Value: "[Dynamic - topic name]"
+- **Posts section headline** (`field_ls_bt_posts_section_headline`)
+  - Name: `posts_section_headline`
+  - Type: `text`
+  - Value: "All articles"
+- **Posts listing note** (`field_ls_bt_posts_listing_note`)
+  - Name: `posts_listing_note`
+  - Type: `textarea`
+  - Value: ""
+- **Pagination mode** (`field_ls_bt_pagination_mode`)
+  - Name: `pagination_mode`
+  - Type: `select`
+  - Value: "load_more"
+- **Milestones enabled** (`field_ls_bt_milestones_enabled`)
+  - Name: `milestones_enabled`
+  - Type: `true_false`
+  - Value: ""
+- **Milestones** (`field_ls_bt_milestones`)
+  - Name: `milestones`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Milestone title** (`field_ls_bt_m_title`)
+      - Name: `milestone_title`
+      - Type: `text`
+      - Value: ""
+    - **Milestone detail** (`field_ls_bt_m_detail`)
+      - Name: `milestone_detail`
+      - Type: `text`
+      - Value: ""
+- **Cross-links headline** (`field_ls_bt_cross_links_headline`)
+  - Name: `cross_links_headline`
+  - Type: `text`
+  - Value: "Related topics"
+- **Cross-links** (`field_ls_bt_cross_links`)
+  - Name: `cross_links`
+  - Type: `repeater`
+  - Value: "[Dynamic - related topic links]"
+  - Sub fields:
+    - **Link label** (`field_ls_bt_cl_label`)
+      - Name: `link_label`
+      - Type: `text`
+      - Value: ""
+    - **Link URL** (`field_ls_bt_cl_url`)
+      - Name: `link_url`
+      - Type: `url`
+      - Value: ""
+- **Newsletter headline** (`field_ls_bt_newsletter_headline`)
+  - Name: `newsletter_headline`
+  - Type: `text`
+  - Value: "Get insights in your inbox"
+- **Newsletter body** (`field_ls_bt_newsletter_body`)
+  - Name: `newsletter_body`
+  - Type: `textarea`
+  - Value: "Practical tips on websites and digital growth. No spam, unsubscribe anytime."
+- **Newsletter CTA label** (`field_ls_bt_newsletter_cta_label`)
+  - Name: `newsletter_cta_label`
+  - Type: `text`
+  - Value: "Subscribe"
+- **Final CTA headline** (`field_ls_bt_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Need help with your website?"
+- **Final CTA primary label** (`field_ls_bt_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: "Get in touch"
+- **Final CTA primary URL** (`field_ls_bt_final_cta_primary_url`)
+  - Name: `final_cta_primary_url`
+  - Type: `url`
+  - Value: ""

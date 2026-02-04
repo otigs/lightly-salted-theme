@@ -1,8 +1,138 @@
 {% extends 'templates/_document.twig' %}
 
 {% block content %}
-  <main class="page page-areas-covered">
-    <h1>{{ post.title }}</h1>
-    {# Content is managed by ACF field group "Areas Covered Page" – output fields as needed #}
-  </main>
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div>
+        {% if post.meta('breadcrumb_label') %}
+          <div class="page-hero__breadcrumbs">{{ post.meta('breadcrumb_label') }}</div>
+        {% endif %}
+        <h1>{{ post.meta('hero_title')|default(post.title) }}</h1>
+        {% if post.meta('hero_intro') %}
+          <p class="lede">{{ post.meta('hero_intro') }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if post.meta('map_display_note') %}
+    <section class="section section--muted">
+      <div class="container">
+        <p class="section-intro">{{ post.meta('map_display_note') }}</p>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('featured_areas_heading') or post.meta('featured_areas') %}
+    <section class="section">
+      <div class="container">
+        {% if post.meta('featured_areas_heading') %}
+          <h2>{{ post.meta('featured_areas_heading') }}</h2>
+        {% endif %}
+        {% if post.meta('featured_areas') %}
+          <div class="card-grid">
+            {% for area in post.meta('featured_areas') %}
+              <article class="card">
+                {% if area.area_image %}
+                  <img src="{{ function('wp_get_attachment_image_url', area.area_image, 'full') }}" alt="{{ area.area_name|e }}">
+                {% endif %}
+                <h3 class="card__title">{{ area.area_name }}</h3>
+                {% if area.area_descriptor %}
+                  <p class="card__meta">{{ area.area_descriptor }}</p>
+                {% endif %}
+                {% if area.area_url %}
+                  <a class="button button--text" href="{{ area.area_url }}">Learn more</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="section section--contrast">
+    <div class="container">
+      {% if post.meta('all_areas_heading') %}
+        <h2>{{ post.meta('all_areas_heading') }}</h2>
+      {% endif %}
+      {% if post.meta('all_areas_note') %}
+        <p class="section-intro">{{ post.meta('all_areas_note') }}</p>
+      {% endif %}
+      {% if areas %}
+        <div class="card-grid">
+          {% for area in areas %}
+            <article class="card">
+              <h3 class="card__title">{{ area.title }}</h3>
+              <a class="button button--text" href="{{ area.link|e('esc_url') }}">View area</a>
+            </article>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if post.meta('why_local_heading') or post.meta('why_local_body') %}
+    <section class="section">
+      <div class="container split-layout">
+        <div>
+          {% if post.meta('why_local_heading') %}
+            <h2>{{ post.meta('why_local_heading') }}</h2>
+          {% endif %}
+          {% if post.meta('why_local_body') %}
+            <div class="paragraph">{{ post.meta('why_local_body')|raw }}</div>
+          {% endif %}
+        </div>
+        {% if post.meta('why_local_points') %}
+          <div class="icon-list">
+            {% for point in post.meta('why_local_points') %}
+              <div class="icon-list__item">
+                <div class="pill">{{ loop.index }}</div>
+                <div>
+                  <strong>{{ point.point_title }}</strong>
+                  {% if point.point_detail %}
+                    <p class="card__meta">{{ point.point_detail }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('testimonial_note') %}
+    <section class="section section--muted">
+      <div class="container">
+        <p class="section-intro">{{ post.meta('testimonial_note') }}</p>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          {% if post.meta('final_cta_headline') %}
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('final_cta_body') %}
+            <p>{{ post.meta('final_cta_body') }}</p>
+          {% endif %}
+          <div class="hero-ctas">
+            {% if post.meta('final_cta_primary_label') %}
+              <a href="{{ site.link }}/contact/" class="button">{{ post.meta('final_cta_primary_label') }}</a>
+            {% endif %}
+            {% if post.meta('final_cta_secondary_label') %}
+              <a href="{{ site.link }}/services/" class="button button--outlined">{{ post.meta('final_cta_secondary_label') }}</a>
+            {% endif %}
+          </div>
+          {% if post.meta('final_cta_microcopy') %}
+            <p class="cta-panel__microcopy">{{ post.meta('final_cta_microcopy') }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}

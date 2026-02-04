@@ -1,0 +1,109 @@
+# Area
+- Field Group Key: `group_ls_area`
+## Fields
+- **Area name** (`field_ls_ar_area_name`)
+  - Name: `area_name`
+  - Type: `text`
+  - Value: "Wimborne"
+- **Hero title** (`field_ls_ar_hero_title`)
+  - Name: `hero_title`
+  - Type: `text`
+  - Value: "Web Design in Wimborne"
+- **Hero introduction** (`field_ls_ar_hero_intro`)
+  - Name: `hero_intro`
+  - Type: `textarea`
+  - Value: "We are proud to call Wimborne home. Lightly Salted is your local digital agency, dedicated to helping our community's businesses grow with ethical, high-quality web solutions."
+- **Primary CTA label** (`field_ls_ar_primary_cta_label`)
+  - Name: `primary_cta_label`
+  - Type: `text`
+  - Value: "Visit us"
+- **Secondary CTA label** (`field_ls_ar_secondary_cta_label`)
+  - Name: `secondary_cta_label`
+  - Type: `text`
+  - Value: "Our services"
+- **Services heading** (`field_ls_ar_services_heading`)
+  - Name: `services_heading`
+  - Type: `text`
+  - Value: "Local Services for Local People"
+- **Services note** (`field_ls_ar_services_note`)
+  - Name: `services_note`
+  - Type: `textarea`
+  - Value: "We offer bespoke web design, hosting, and support right here in Wimborne. No call centers, just friendly local experts."
+- **Local case studies heading** (`field_ls_ar_local_case_studies_heading`)
+  - Name: `local_case_studies_heading`
+  - Type: `text`
+  - Value: "Community Impact"
+- **Local case studies note** (`field_ls_ar_local_case_studies_note`)
+  - Name: `local_case_studies_note`
+  - Type: `textarea`
+  - Value: "We are a Living Wage employer actively contributing to reducing poverty in Wimborne."
+- **Local agency heading** (`field_ls_ar_local_agency_heading`)
+  - Name: `local_agency_heading`
+  - Type: `text`
+  - Value: "Why work with your neighbors?"
+- **Local agency body** (`field_ls_ar_local_agency_body`)
+  - Name: `local_agency_body`
+  - Type: `wysiwyg`
+  - Value: "<p>Working with a Wimborne-based agency means you have a partner who understands the local landscape. We are 'friendly' and 'authentic', and we believe in the intrinsic value of people. We're here to help our town thrive.</p>"
+- **Local agency benefits** (`field_ls_ar_local_agency_benefits`)
+  - Name: `local_agency_benefits`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Benefit title** (`field_ls_ar_ab_title`)
+      - Name: `benefit_title`
+      - Type: `text`
+      - Value: "Local Presence"
+    - **Benefit detail** (`field_ls_ar_ab_detail`)
+      - Name: `benefit_detail`
+      - Type: `textarea`
+      - Value: "We are part of the Wimborne business community."
+    - **Benefit title** (`field_ls_ar_ab_title`)
+      - Name: `benefit_title`
+      - Type: `text`
+      - Value: "Ethical Choice"
+    - **Benefit detail** (`field_ls_ar_ab_detail`)
+      - Name: `benefit_detail`
+      - Type: `textarea`
+      - Value: "Signatories of the Good Business Charter."
+- **Testimonial note** (`field_ls_ar_testimonial_note`)
+  - Name: `testimonial_note`
+  - Type: `textarea`
+  - Value: "Trusted by local clients for our honesty and integrity."
+- **Nearby areas heading** (`field_ls_ar_nearby_areas_heading`)
+  - Name: `nearby_areas_heading`
+  - Type: `text`
+  - Value: "Neighbors we serve"
+- **Nearby areas** (`field_ls_ar_nearby_areas`)
+  - Name: `nearby_areas`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Nearby area name** (`field_ls_ar_na_name`)
+      - Name: `nearby_area_name`
+      - Type: `text`
+      - Value: "Bournemouth"
+    - **Nearby area URL** (`field_ls_ar_na_url`)
+      - Name: `nearby_area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-bournemouth/"
+    - **Nearby area name** (`field_ls_ar_na_name`)
+      - Name: `nearby_area_name`
+      - Type: `text`
+      - Value: "Poole"
+    - **Nearby area URL** (`field_ls_ar_na_url`)
+      - Name: `nearby_area_url`
+      - Type: `url`
+      - Value: "https://www.lightlysalted.agency/areas-covered/web-design-in-poole/"
+- **Final CTA headline** (`field_ls_ar_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: "Pop in for a chat"
+- **Final CTA body** (`field_ls_ar_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: "Let's discuss how we can help your Wimborne business grow."
+- **Contact note** (`field_ls_ar_contact_note`)
+  - Name: `contact_note`
+  - Type: `textarea`
+  - Value: "We look forward to meeting you."

@@ -2,26 +2,180 @@
 
 {% block content %}
   <article class="single-case-study">
-    <header class="entry-header">
-      <h1>{{ post.meta('project_headline')|default(post.title) }}</h1>
-      {% if post.meta('client_name') %}<p class="client">{{ post.meta('client_name') }}</p>{% endif %}
-    </header>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          {% if post.meta('client_logo') %}
+            <img src="{{ function('wp_get_attachment_image_url', post.meta('client_logo'), 'full') }}" alt="{{ post.meta('client_name')|e }}" width="120" height="120">
+          {% endif %}
+          <h1>{{ post.meta('project_headline')|default(post.title) }}</h1>
+          {% if post.meta('client_name') %}
+            <p class="lede">{{ post.meta('client_name') }}</p>
+          {% endif %}
+          {% if post.meta('key_metrics') %}
+            <div class="metrics-grid">
+              {% for metric in post.meta('key_metrics') %}
+                <div class="metric">
+                  <div class="metric__value">{{ metric.metric_value }}</div>
+                  <div class="metric__label">{{ metric.metric_label }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        {% if post.meta('hero_image') %}
+          <div class="page-hero__media">
+            <img src="{{ function('wp_get_attachment_image_url', post.meta('hero_image'), 'full') }}" alt="{{ post.title|e }}">
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+    {% if post.meta('project_overview') %}
+      <section class="section section--muted">
+        <div class="container card-grid">
+          {% if post.meta('project_overview').industry %}
+            <article class="card">
+              <h3 class="card__title">Industry</h3>
+              <p class="card__meta">{{ post.meta('project_overview').industry }}</p>
+            </article>
+          {% endif %}
+          {% if post.meta('project_overview').services %}
+            <article class="card">
+              <h3 class="card__title">Services</h3>
+              <p class="card__meta">{{ post.meta('project_overview').services }}</p>
+            </article>
+          {% endif %}
+          {% if post.meta('project_overview').timeline %}
+            <article class="card">
+              <h3 class="card__title">Timeline</h3>
+              <p class="card__meta">{{ post.meta('project_overview').timeline }}</p>
+            </article>
+          {% endif %}
+          {% if post.meta('project_overview').website_url %}
+            <article class="card">
+              <h3 class="card__title">Website</h3>
+              <a class="button button--text" href="{{ post.meta('project_overview').website_url }}">Visit site</a>
+            </article>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+
     {% if post.meta('challenge') %}
-      <section class="challenge">{{ post.meta('challenge')|raw }}</section>
+      <section class="section">
+        <div class="container">
+          <h2>The challenge</h2>
+          <div class="paragraph">{{ post.meta('challenge')|raw }}</div>
+        </div>
+      </section>
     {% endif %}
+
     {% if post.meta('approach') %}
-      <section class="approach">{{ post.meta('approach')|raw }}</section>
+      <section class="section section--contrast">
+        <div class="container split-layout">
+          <div>
+            <h2>Our approach</h2>
+            <div class="paragraph">{{ post.meta('approach')|raw }}</div>
+          </div>
+          {% if post.meta('approach_highlights') %}
+            <div class="icon-list">
+              {% for highlight in post.meta('approach_highlights') %}
+                <div class="icon-list__item">
+                  <div class="pill">{{ loop.index }}</div>
+                  <div><strong>{{ highlight.highlight }}</strong></div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
     {% endif %}
+
     {% if post.meta('solution') %}
-      <section class="solution">{{ post.meta('solution')|raw }}</section>
+      <section class="section">
+        <div class="container">
+          <h2>The solution</h2>
+          <div class="paragraph">{{ post.meta('solution')|raw }}</div>
+          {% if post.meta('solution_gallery') %}
+            <div class="card-grid">
+              {% for item in post.meta('solution_gallery') %}
+                <figure class="card">
+                  {% if item.image %}
+                    <img src="{{ function('wp_get_attachment_image_url', item.image, 'full') }}" alt="{{ item.caption|e }}">
+                  {% endif %}
+                  {% if item.caption %}
+                    <figcaption class="note">{{ item.caption }}</figcaption>
+                  {% endif %}
+                </figure>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
     {% endif %}
+
     {% if post.meta('results') %}
-      <section class="results">{{ post.meta('results')|raw }}</section>
+      <section class="section section--muted">
+        <div class="container">
+          <h2>The results</h2>
+          <div class="paragraph">{{ post.meta('results')|raw }}</div>
+          {% if post.meta('results_metrics') %}
+            <div class="metrics-grid">
+              {% for metric in post.meta('results_metrics') %}
+                <div class="metric">
+                  <div class="metric__value">{{ metric.result_detail }}</div>
+                  <div class="metric__label">{{ metric.result_label }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
     {% endif %}
-    {% if post.meta('final_cta_headline') %}
-      <section class="final-cta">
-        <h2>{{ post.meta('final_cta_headline') }}</h2>
-        {% if post.meta('final_cta_body') %}<p>{{ post.meta('final_cta_body') }}</p>{% endif %}
+
+    {% if post.meta('testimonial') %}
+      <section class="section">
+        <div class="container">
+          <blockquote>
+            {% if post.meta('testimonial').quote %}
+              <p>{{ post.meta('testimonial').quote }}</p>
+            {% endif %}
+            <footer>
+              <cite>
+                {% if post.meta('testimonial').name %}
+                  <strong>{{ post.meta('testimonial').name }}</strong>
+                {% endif %}
+                {% if post.meta('testimonial').role_company %}
+                  <span>{{ post.meta('testimonial').role_company }}</span>
+                {% endif %}
+              </cite>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('related_projects_note') %}
+      <section class="section section--contrast">
+        <div class="container">
+          <p class="section-intro">{{ post.meta('related_projects_note') }}</p>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            {% if post.meta('final_cta_headline') %}
+              <h2>{{ post.meta('final_cta_headline') }}</h2>
+            {% endif %}
+            {% if post.meta('final_cta_body') %}
+              <p>{{ post.meta('final_cta_body') }}</p>
+            {% endif %}
+          </div>
+        </div>
       </section>
     {% endif %}
   </article>

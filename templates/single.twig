@@ -2,17 +2,133 @@
 
 {% block content %}
   <article>
-    <header>
-      {{ renderComponent('BlockPostHeader', {post: post}) }}
-    </header>
-    <section class="wp-block-post-content has-global-padding is-layout-constrained">
-        {{ post.content }}
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          {% if post.meta('category') %}
+            <div class="eyebrow">{{ post.meta('category') }}</div>
+          {% endif %}
+          <h1>{{ post.meta('post_title_display')|default(post.title) }}</h1>
+          <div class="groupContainer">
+            {% if post.meta('publication_date') %}
+              <span class="pill">{{ post.meta('publication_date') }}</span>
+            {% endif %}
+            {% if post.meta('read_time') %}
+              <span class="pill">{{ post.meta('read_time') }}</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </section>
-    <footer>
-      {{ renderComponent('BlockPostFooter', {post: post}) }}
-    </footer>
-    <section>
+
+    {% if post.meta('featured_image') %}
+      <section class="section">
+        <div class="container">
+          <figure>
+            <img src="{{ function('wp_get_attachment_image_url', post.meta('featured_image'), 'full') }}" alt="{{ post.meta('featured_image_caption')|e ?: post.title }}">
+            {% if post.meta('featured_image_caption') %}
+              <figcaption>{{ post.meta('featured_image_caption') }}</figcaption>
+            {% endif %}
+          </figure>
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="section">
+      <div class="container">
+        <div class="wp-block-post-content">
+          {{ post.meta('body')|default(post.content)|raw }}
+        </div>
+      </div>
+    </section>
+
+    {% if post.meta('author') %}
+      <section class="section section--muted">
+        <div class="container">
+          <div class="card">
+            <div class="split-layout">
+              {% if post.meta('author').author_photo %}
+                <img src="{{ function('wp_get_attachment_image_url', post.meta('author').author_photo, 'full') }}" alt="{{ post.meta('author').author_name|e }}">
+              {% endif %}
+              <div>
+                {% if post.meta('author').author_name %}
+                  <h3 class="card__title">{{ post.meta('author').author_name }}</h3>
+                {% endif %}
+                {% if post.meta('author').author_role %}
+                  <p class="card__meta">{{ post.meta('author').author_role }}</p>
+                {% endif %}
+                {% if post.meta('author').author_bio %}
+                  <p>{{ post.meta('author').author_bio }}</p>
+                {% endif %}
+                {% if post.meta('author').author_linkedin %}
+                  <a class="button button--text" href="{{ post.meta('author').author_linkedin }}">LinkedIn</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('share_note') %}
+      <section class="section">
+        <div class="container">
+          <p class="note">{{ post.meta('share_note') }}</p>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('related_posts_note') %}
+      <section class="section">
+        <div class="container">
+          <p class="section-intro">{{ post.meta('related_posts_note') }}</p>
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="section">
       {{ renderComponent('GridPostsLatest', {'taxonomies': post.categories(), 'options': {'theme': 'light', 'maxColumns': 3}}) }}
     </section>
+
+    {% if post.meta('newsletter_headline') or post.meta('newsletter_body') %}
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            {% if post.meta('newsletter_headline') %}
+              <h2>{{ post.meta('newsletter_headline') }}</h2>
+            {% endif %}
+            {% if post.meta('newsletter_body') %}
+              <p>{{ post.meta('newsletter_body') }}</p>
+            {% endif %}
+            {% if post.meta('newsletter_cta_label') %}
+              <a href="{{ site.link }}/contact/" class="button">{{ post.meta('newsletter_cta_label') }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            {% if post.meta('final_cta_headline') %}
+              <h2>{{ post.meta('final_cta_headline') }}</h2>
+            {% endif %}
+            {% if post.meta('final_cta_body') %}
+              <p>{{ post.meta('final_cta_body') }}</p>
+            {% endif %}
+            <div class="hero-ctas">
+              {% if post.meta('final_cta_primary_label') %}
+                <a href="{{ site.link }}/contact/" class="button">{{ post.meta('final_cta_primary_label') }}</a>
+              {% endif %}
+              {% if post.meta('final_cta_secondary_label') %}
+                <a href="{{ site.link }}/services/" class="button button--outlined">{{ post.meta('final_cta_secondary_label') }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
   </article>
 {% endblock %}

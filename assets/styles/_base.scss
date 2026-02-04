@@ -16,7 +16,7 @@ body,
   font-size: var(--font-size-body);
   font-weight: 400;
   line-height: 1.7;
-  background-color: var(--surface-50);
+  background-color: var(--color-background);
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -85,6 +85,25 @@ a {
 a:hover {
   color: var(--link-hover);
   text-decoration: underline;
+}
+
+.lede {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lede);
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.note {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
 }
 
 hr {
@@ -266,6 +285,12 @@ table {
     --button-text-color: var(--color-accent);
     border: 0;
     padding: 0;
+  }
+
+  &--full {
+    display: inline-flex;
+    inline-size: 100%;
+    justify-content: center;
   }
 }
 

@@ -2,26 +2,61 @@
 
 {% block content %}
   <article class="single-blog-archive">
-    <header class="entry-header">
-      <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
-      {% if post.meta('hero_subheadline') %}<p class="subheadline">{{ post.meta('hero_subheadline') }}</p>{% endif %}
-    </header>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div>
+          <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
+          {% if post.meta('hero_subheadline') %}
+            <p class="lede">{{ post.meta('hero_subheadline') }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
     {% if post.meta('topic_cards') %}
-      <section class="topic-cards">
-        <h2>{{ post.meta('topic_nav_headline')|default('Browse by topic') }}</h2>
-        <ul>
-          {% for card in post.meta('topic_cards') %}
-            <li><a href="{{ card.topic_url }}">{{ card.topic_name }}</a></li>
-          {% endfor %}
-        </ul>
+      <section class="section">
+        <div class="container">
+          <h2>{{ post.meta('topic_nav_headline')|default('Browse by topic') }}</h2>
+          <div class="card-grid">
+            {% for card in post.meta('topic_cards') %}
+              <article class="card">
+                <h3 class="card__title">{{ card.topic_name }}</h3>
+                {% if card.topic_summary %}
+                  <p class="card__meta">{{ card.topic_summary }}</p>
+                {% endif %}
+                {% if card.topic_url %}
+                  <a class="button button--text" href="{{ card.topic_url }}">Explore topic</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        </div>
       </section>
     {% endif %}
-    <section class="posts-listing">
-      <p>Latest posts (query <code>post</code> type)</p>
+
+    <section class="section section--contrast">
+      <div class="container">
+        {% if posts %}
+          <div class="card-grid">
+            {% for entry in posts %}
+              <article class="card">
+                <h3 class="card__title">{{ entry.title }}</h3>
+                <p class="card__meta">{{ entry.excerpt.read_more(false) }}</p>
+                <a class="button button--text" href="{{ entry.link|e('esc_url') }}">Read article</a>
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
     </section>
+
     {% if post.meta('final_cta_headline') %}
-      <section class="final-cta">
-        <h2>{{ post.meta('final_cta_headline') }}</h2>
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+          </div>
+        </div>
       </section>
     {% endif %}
   </article>

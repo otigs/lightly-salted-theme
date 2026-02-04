@@ -1,0 +1,162 @@
+# Homepage
+- Field Group Key: `group_ls_homepage`
+## Fields
+- **Hero headline** (`field_ls_hp_hero_headline`)
+  - Name: `hero_headline`
+  - Type: `text`
+  - Value: ""
+- **Hero subheadline** (`field_ls_hp_hero_subheadline`)
+  - Name: `hero_subheadline`
+  - Type: `textarea`
+  - Value: ""
+- **Hero primary CTA label** (`field_ls_hp_hero_primary_cta_label`)
+  - Name: `hero_primary_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Hero secondary CTA label** (`field_ls_hp_hero_secondary_cta_label`)
+  - Name: `hero_secondary_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Trust badges** (`field_ls_hp_trust_badges`)
+  - Name: `trust_badges`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Badge name** (`field_ls_hp_tb_name`)
+      - Name: `badge_name`
+      - Type: `text`
+      - Value: ""
+    - **Badge image** (`field_ls_hp_tb_image`)
+      - Name: `badge_image`
+      - Type: `image`
+      - Value: ""
+- **Video testimonials headline** (`field_ls_hp_video_testimonials_headline`)
+  - Name: `video_testimonials_headline`
+  - Type: `text`
+  - Value: ""
+- **Video testimonials note** (`field_ls_hp_video_testimonials_note`)
+  - Name: `video_testimonials_note`
+  - Type: `textarea`
+  - Value: ""
+- **Services headline** (`field_ls_hp_services_headline`)
+  - Name: `services_headline`
+  - Type: `text`
+  - Value: ""
+- **Services intro** (`field_ls_hp_services_intro`)
+  - Name: `services_intro`
+  - Type: `textarea`
+  - Value: ""
+- **Service cards** (`field_ls_hp_service_cards`)
+  - Name: `service_cards`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Service name** (`field_ls_hp_sc_name`)
+      - Name: `service_name`
+      - Type: `text`
+      - Value: ""
+    - **Service summary** (`field_ls_hp_sc_summary`)
+      - Name: `service_summary`
+      - Type: `textarea`
+      - Value: ""
+    - **Service URL** (`field_ls_hp_sc_url`)
+      - Name: `service_url`
+      - Type: `url`
+      - Value: ""
+- **Services CTA label** (`field_ls_hp_services_cta_label`)
+  - Name: `services_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Featured work headline** (`field_ls_hp_featured_work_headline`)
+  - Name: `featured_work_headline`
+  - Type: `text`
+  - Value: ""
+- **Featured work intro** (`field_ls_hp_featured_work_intro`)
+  - Name: `featured_work_intro`
+  - Type: `textarea`
+  - Value: ""
+- **Featured work note** (`field_ls_hp_featured_work_note`)
+  - Name: `featured_work_note`
+  - Type: `textarea`
+  - Value: ""
+- **Featured work CTA label** (`field_ls_hp_featured_work_cta_label`)
+  - Name: `featured_work_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Differentiators headline** (`field_ls_hp_differentiators_headline`)
+  - Name: `differentiators_headline`
+  - Type: `text`
+  - Value: ""
+- **Differentiators** (`field_ls_hp_differentiators`)
+  - Name: `differentiators`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Differentiator title** (`field_ls_hp_diff_title`)
+      - Name: `diff_title`
+      - Type: `text`
+      - Value: ""
+    - **Differentiator body** (`field_ls_hp_diff_body`)
+      - Name: `diff_body`
+      - Type: `textarea`
+      - Value: ""
+- **Testimonials headline** (`field_ls_hp_testimonials_headline`)
+  - Name: `testimonials_headline`
+  - Type: `text`
+  - Value: ""
+- **Testimonials note** (`field_ls_hp_testimonials_note`)
+  - Name: `testimonials_note`
+  - Type: `textarea`
+  - Value: ""
+- **Blog preview headline** (`field_ls_hp_blog_preview_headline`)
+  - Name: `blog_preview_headline`
+  - Type: `text`
+  - Value: ""
+- **Blog preview intro** (`field_ls_hp_blog_preview_intro`)
+  - Name: `blog_preview_intro`
+  - Type: `textarea`
+  - Value: ""
+- **Blog preview note** (`field_ls_hp_blog_preview_note`)
+  - Name: `blog_preview_note`
+  - Type: `textarea`
+  - Value: ""
+- **Blog preview CTA label** (`field_ls_hp_blog_preview_cta_label`)
+  - Name: `blog_preview_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Areas headline** (`field_ls_hp_areas_headline`)
+  - Name: `areas_headline`
+  - Type: `text`
+  - Value: ""
+- **Areas body** (`field_ls_hp_areas_body`)
+  - Name: `areas_body`
+  - Type: `textarea`
+  - Value: ""
+- **Areas note** (`field_ls_hp_areas_note`)
+  - Name: `areas_note`
+  - Type: `textarea`
+  - Value: ""
+- **Areas CTA label** (`field_ls_hp_areas_cta_label`)
+  - Name: `areas_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA headline** (`field_ls_hp_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: ""
+- **Final CTA body** (`field_ls_hp_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: ""
+- **Final CTA primary label** (`field_ls_hp_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA secondary label** (`field_ls_hp_final_cta_secondary_label`)
+  - Name: `final_cta_secondary_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA microcopy** (`field_ls_hp_final_cta_microcopy`)
+  - Name: `final_cta_microcopy`
+  - Type: `text`
+  - Value: ""

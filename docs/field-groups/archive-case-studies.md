@@ -1,0 +1,86 @@
+# Case Studies Page
+- Field Group Key: `group_ls_case_studies_page`
+## Fields
+- **Hero title** (`field_ls_csa_hero_title`)
+  - Name: `hero_title`
+  - Type: `text`
+  - Value: ""
+- **Hero introduction** (`field_ls_csa_hero_intro`)
+  - Name: `hero_intro`
+  - Type: `textarea`
+  - Value: ""
+- **Breadcrumb label** (`field_ls_csa_breadcrumb_label`)
+  - Name: `breadcrumb_label`
+  - Type: `text`
+  - Value: ""
+- **Alternative titles** (`field_ls_csa_alternative_titles`)
+  - Name: `alternative_titles`
+  - Type: `textarea`
+  - Value: ""
+- **Filters label** (`field_ls_csa_filters_label`)
+  - Name: `filters_label`
+  - Type: `text`
+  - Value: ""
+- **Industry filters** (`field_ls_csa_industry_filters`)
+  - Name: `industry_filters`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Filter label** (`field_ls_csa_if_label`)
+      - Name: `filter_label`
+      - Type: `text`
+      - Value: ""
+- **Service filters** (`field_ls_csa_service_filters`)
+  - Name: `service_filters`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Filter label** (`field_ls_csa_sf_label`)
+      - Name: `filter_label`
+      - Type: `text`
+      - Value: ""
+- **Featured case study note** (`field_ls_csa_featured_case_study_note`)
+  - Name: `featured_case_study_note`
+  - Type: `textarea`
+  - Value: ""
+- **Case study grid note** (`field_ls_csa_case_study_grid_note`)
+  - Name: `case_study_grid_note`
+  - Type: `textarea`
+  - Value: ""
+- **Results summary headline** (`field_ls_csa_results_summary_headline`)
+  - Name: `results_summary_headline`
+  - Type: `text`
+  - Value: ""
+- **Results summary metrics** (`field_ls_csa_results_summary_metrics`)
+  - Name: `results_summary_metrics`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Metric label** (`field_ls_csa_rsm_label`)
+      - Name: `metric_label`
+      - Type: `text`
+      - Value: ""
+    - **Metric detail** (`field_ls_csa_rsm_detail`)
+      - Name: `metric_detail`
+      - Type: `text`
+      - Value: ""
+- **Testimonial strip note** (`field_ls_csa_testimonial_strip_note`)
+  - Name: `testimonial_strip_note`
+  - Type: `textarea`
+  - Value: ""
+- **Final CTA headline** (`field_ls_csa_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: ""
+- **Final CTA body** (`field_ls_csa_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: ""
+- **Final CTA primary label** (`field_ls_csa_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: ""
+- **Final CTA secondary label** (`field_ls_csa_final_cta_secondary_label`)
+  - Name: `final_cta_secondary_label`
+  - Type: `text`
+  - Value: ""

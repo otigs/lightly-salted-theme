@@ -1,0 +1,76 @@
+# Blog Page
+- Field Group Key: `group_ls_blog_page`
+## Fields
+- **Hero headline** (`field_ls_ba_hero_headline`)
+  - Name: `hero_headline`
+  - Type: `text`
+  - Value: ""
+- **Hero subheadline** (`field_ls_ba_hero_subheadline`)
+  - Name: `hero_subheadline`
+  - Type: `textarea`
+  - Value: ""
+- **Breadcrumb label** (`field_ls_ba_breadcrumb_label`)
+  - Name: `breadcrumb_label`
+  - Type: `text`
+  - Value: ""
+- **Featured post note** (`field_ls_ba_featured_post_note`)
+  - Name: `featured_post_note`
+  - Type: `textarea`
+  - Value: ""
+- **Topic navigation headline** (`field_ls_ba_topic_nav_headline`)
+  - Name: `topic_nav_headline`
+  - Type: `text`
+  - Value: ""
+- **Topic cards** (`field_ls_ba_topic_cards`)
+  - Name: `topic_cards`
+  - Type: `repeater`
+  - Value: ""
+  - Sub fields:
+    - **Topic name** (`field_ls_ba_tc_name`)
+      - Name: `topic_name`
+      - Type: `text`
+      - Value: ""
+    - **Topic summary** (`field_ls_ba_tc_summary`)
+      - Name: `topic_summary`
+      - Type: `textarea`
+      - Value: ""
+    - **Topic URL** (`field_ls_ba_tc_url`)
+      - Name: `topic_url`
+      - Type: `url`
+      - Value: ""
+- **Post listing note** (`field_ls_ba_post_listing_note`)
+  - Name: `post_listing_note`
+  - Type: `textarea`
+  - Value: ""
+- **Pagination mode** (`field_ls_ba_pagination_mode`)
+  - Name: `pagination_mode`
+  - Type: `select`
+  - Value: ""
+- **Newsletter headline** (`field_ls_ba_newsletter_headline`)
+  - Name: `newsletter_headline`
+  - Type: `text`
+  - Value: ""
+- **Newsletter body** (`field_ls_ba_newsletter_body`)
+  - Name: `newsletter_body`
+  - Type: `textarea`
+  - Value: ""
+- **Newsletter CTA label** (`field_ls_ba_newsletter_cta_label`)
+  - Name: `newsletter_cta_label`
+  - Type: `text`
+  - Value: ""
+- **Newsletter microcopy** (`field_ls_ba_newsletter_microcopy`)
+  - Name: `newsletter_microcopy`
+  - Type: `text`
+  - Value: ""
+- **Final CTA headline** (`field_ls_ba_final_cta_headline`)
+  - Name: `final_cta_headline`
+  - Type: `text`
+  - Value: ""
+- **Final CTA body** (`field_ls_ba_final_cta_body`)
+  - Name: `final_cta_body`
+  - Type: `textarea`
+  - Value: ""
+- **Final CTA primary label** (`field_ls_ba_final_cta_primary_label`)
+  - Name: `final_cta_primary_label`
+  - Type: `text`
+  - Value: ""

@@ -1,8 +1,123 @@
 {% extends 'templates/_document.twig' %}
 
 {% block content %}
-  <main class="page page-blog">
-    <h1>{{ post.title }}</h1>
-    {# Content is managed by ACF field group "Blog Page" – output fields as needed #}
-  </main>
+  {% set blog_link = function('get_permalink', function('get_option', 'page_for_posts')) %}
+
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div>
+        {% if post.meta('breadcrumb_label') %}
+          <div class="page-hero__breadcrumbs">{{ post.meta('breadcrumb_label') }}</div>
+        {% endif %}
+        <h1>{{ post.meta('hero_headline')|default(post.title) }}</h1>
+        {% if post.meta('hero_subheadline') %}
+          <p class="lede">{{ post.meta('hero_subheadline') }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if post.meta('featured_post_note') %}
+    <section class="section section--muted">
+      <div class="container">
+        <p class="section-intro">{{ post.meta('featured_post_note') }}</p>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('topic_nav_headline') or post.meta('topic_cards') %}
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          {% if post.meta('topic_nav_headline') %}
+            <h2>{{ post.meta('topic_nav_headline') }}</h2>
+          {% endif %}
+        </header>
+        {% if post.meta('topic_cards') %}
+          <div class="card-grid">
+            {% for card in post.meta('topic_cards') %}
+              <article class="card">
+                <h3 class="card__title">{{ card.topic_name }}</h3>
+                {% if card.topic_summary %}
+                  <p class="card__meta">{{ card.topic_summary }}</p>
+                {% endif %}
+                {% if card.topic_url %}
+                  <a class="button button--text" href="{{ card.topic_url }}">Explore topic</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="section section--contrast" {{ post.meta('pagination_mode') ? 'data-pagination-mode="' ~ post.meta('pagination_mode') ~ '"' }}>
+    <div class="container">
+      {% if post.meta('post_listing_note') %}
+        <p class="section-intro">{{ post.meta('post_listing_note') }}</p>
+      {% endif %}
+      {% if posts %}
+        <div class="card-grid">
+          {% for entry in posts %}
+            <article class="card">
+              <h3 class="card__title">{{ entry.title }}</h3>
+              <p class="card__meta">{{ entry.excerpt.read_more(false) }}</p>
+              <a class="button button--text" href="{{ entry.link|e('esc_url') }}">Read article</a>
+            </article>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% set pagination = posts.pagination %}
+      {% if pagination.pages %}
+        <nav class="section-intro" aria-label="Blog pagination">
+          {% if pagination.prev %}
+            <a class="button button--text" href="{{ pagination.prev.link|e('esc_url') }}">Previous</a>
+          {% endif %}
+          {% if pagination.next %}
+            <a class="button button--text" href="{{ pagination.next.link|e('esc_url') }}">Next</a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if post.meta('newsletter_headline') or post.meta('newsletter_body') %}
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          {% if post.meta('newsletter_headline') %}
+            <h2>{{ post.meta('newsletter_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('newsletter_body') %}
+            <p>{{ post.meta('newsletter_body') }}</p>
+          {% endif %}
+          {% if post.meta('newsletter_cta_label') %}
+            <a href="{{ blog_link|default('/blog/') }}" class="button">{{ post.meta('newsletter_cta_label') }}</a>
+          {% endif %}
+          {% if post.meta('newsletter_microcopy') %}
+            <p class="cta-panel__microcopy">{{ post.meta('newsletter_microcopy') }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if post.meta('final_cta_headline') or post.meta('final_cta_body') %}
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          {% if post.meta('final_cta_headline') %}
+            <h2>{{ post.meta('final_cta_headline') }}</h2>
+          {% endif %}
+          {% if post.meta('final_cta_body') %}
+            <p>{{ post.meta('final_cta_body') }}</p>
+          {% endif %}
+          {% if post.meta('final_cta_primary_label') %}
+            <a href="{{ site.link }}/contact/" class="button">{{ post.meta('final_cta_primary_label') }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}
